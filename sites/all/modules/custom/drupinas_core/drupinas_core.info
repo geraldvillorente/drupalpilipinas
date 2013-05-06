@@ -1,0 +1,6 @@
+; $Id:  $
+name = Drupal Pilipinas Core
+description = Provides commmon core functionality for Drupal Pilipinas
+package = Custom
+version = "7.x-1.0"
+core = 7.x

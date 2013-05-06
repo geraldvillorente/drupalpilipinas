@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Drupal Pilipinas .install.
+ */
+
+
+/**
+ * Implements hook_schema().
+ */
+function drupinas_core_schema() {
+}
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function drupinas_core_uninstall() {
+}
+
+
+/**
+ * UPDATE: Put your comment(s) here.
+ */
+/* Delete this comment when needed
+function drupinas_core_update_7000() {
+
+}
+Delete this as well*/
+
+
+/**
+ * UPDATE: Put your comment(s) here.
+ */
+/* Delete this comment when needed
+function drupinas_core_update_7001() {
+
+}
+Delete this as well*/
+
+
+/**
+ * UPDATE: Put your comment(s) here.
+ */
+/* Delete this comment when needed
+function drupinas_core_update_7002() {
+
+}
+Delete this as well*/
