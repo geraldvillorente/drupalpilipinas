@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the delta_context_omega feature.
+ */
+
+include_once 'delta_context_omega.features.inc';
