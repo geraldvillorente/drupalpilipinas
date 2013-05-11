@@ -1,0 +1,15 @@
+name = delta_context_omega
+description = delta_context_omega
+core = 7.x
+package = DrupalPilipinas
+version = 7.x-1.0
+project = delta_context_omega
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = delta
+features[context][] = homepage
+features[ctools][] = context:context:3
+features[ctools][] = delta:delta:3
+features[delta][] = home_delta_tpl
+features[delta][] = inside_pages
+features[features_api][] = api:1
