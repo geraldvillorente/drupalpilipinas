@@ -1,24 +1,32 @@
-#!/bin/sh
+#!/bin/bash
 
 # Deployment script of Drupal Pilipinas
 
 usage() {
-  echo "Usage : "
-  echo " ./deployment.sh"
+  echo "Ex: ./deployment.sh local"
   exit 1
 }
 
-echo -n "Are you sure you want to deploy?[Y/N] "
-# Read the user input
-read ANSWER
+if [ -z "$1" ]; then
+  echo "You have to specify the environment."
+  echo "";
+  usage
+  exit 1
+fi
 
-# Check if you specify the files source 
+read -p "What is the name of the folder where your settings.php currently resides in? " SETTINGS_DIR
+cd $SETTINGS_DIR
+
+# Read the user input
+read -p "Are you sure you want to deploy (Y/N)? " ANSWER
+
+# Check if the user cofirmed. 
 if [ -z "$ANSWER" ]; then
   echo "Oh crap! You have to agree matey."
-  exit
+  exit 1
 else
-  # Check if the source path is valid
-  if [ -n "$ANSWER" ] && [ $ANSWER = 'Y']; then
+  # Check for the supplied input.
+  if [ "$ANSWER" == "Y" ]; then
 	drush en ctools -y
 	drush en context -y
 	drush en delta -y
@@ -33,8 +41,18 @@ else
 	drush en metatag -y
 	drush en views -y
 	drush en views_ui -y
-  else
-	echo "Looooseerrrr!"
-	exit
+	
+	echo "All deployed. Thank you!"
+	
+	exit 1
+  elif [ "$ANSWER" == "N" ]; then
+    echo "Don't be afraid, everythings gonna be alright. Lagot ka!"
+    exit 1
+  elif [ "$ANSWER" != "Y" ] || [ "$ANSWER" -ne "N" ]; then
+	echo "I only accept Y or N! Cmmon!"
+	exit 1
+  else 
+    echo "Looseerr!"
+    exit 1
   fi
 fi
