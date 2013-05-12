@@ -3,7 +3,7 @@
 # Deployment script of Drupal Pilipinas
 
 usage() {
-  echo "Ex: ./deployment.sh local"
+  echo "Ex: ./deployment.sh local|staging"
   exit 1
 }
 
@@ -15,6 +15,12 @@ if [ -z "$1" ]; then
 fi
 
 read -p "What is the name of the folder where your settings.php currently resides in? " SETTINGS_DIR
+
+if [ ! -d "$SETTINGS_DIR" ]; then
+  echo "The folder you specified doesn't exist. Get a coffee and run again."
+  exit 1
+fi
+# Navigate to files/settings directory.
 cd $SETTINGS_DIR
 
 # Read the user input
@@ -49,10 +55,7 @@ else
     echo "Don't be afraid, everythings gonna be alright. Lagot ka!"
     exit 1
   elif [ "$ANSWER" != "Y" ] || [ "$ANSWER" -ne "N" ]; then
-	echo "I only accept Y or N! Cmmon!"
+	echo "I only accept Y or N! Cmmon! Looseerr!"
 	exit 1
-  else 
-    echo "Looseerr!"
-    exit 1
-  fi
+  fi 
 fi

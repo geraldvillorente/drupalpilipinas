@@ -4,3 +4,72 @@
  * @file
  * Drupal Pilipinas core module.
  */
+
+
+/**
+ * Implements hook_block_info().
+ */
+function drupinas_core_block_info() {
+  $blocks = array();
+  
+  $blocks['featured-blog'] = array(
+    'info' => t('Featured on Blog'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $blocks['job-board'] = array(
+    'info' => t('Job Board'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $blocks['recent-qna'] = array(
+    'info' => t('Recent Questions on Q/A'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $blocks['copyright'] = array(
+    'info' => t('Copyright'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $blocks['about-footer'] = array(
+    'info' => t('About Footer'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+function drupinas_core_block_view($delta = '') {
+  $blocks = array();
+
+  switch ($delta) {
+    case 'featured-blog':
+      $blocks['content'] = '';
+      $blocks['subject'] = t('Featured on Blog');
+      break;
+
+    case 'job-board':
+      $blocks['content'] = '';
+      $blocks['subject'] = t('Job Board');
+      break;
+
+    case 'recent-qna':
+      $blocks['content'] = '';
+      $blocks['subject'] = t('Recent Questions on Q/A');
+      break;
+
+    case 'about-footer':
+      $blocks['content'] = '';
+      $blocks['subject'] = t('DRUPALPILIPINAS');
+
+    case 'copyright':
+      $blocks['content'] = '';
+      $blocks['subject'] = t('Copyright');
+      break;
+
+    default:
+      break;
+  }
+  return $blocks;
+}
