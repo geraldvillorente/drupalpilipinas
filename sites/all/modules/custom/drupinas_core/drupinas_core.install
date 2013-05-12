@@ -21,13 +21,16 @@ function drupinas_core_uninstall() {
 
 
 /**
- * UPDATE: Put your comment(s) here.
+ * UPDATE: Disable toolbar module.
  */
-/* Delete this comment when needed
 function drupinas_core_update_7000() {
-
+  $mods = array('toolbar');
+  module_disable($mods);
+  
+  return array(
+    array('success' => TRUE, 'query' => 'The modules ' . implode(', ', $mods) . ' have been disabled.'),
+  );
 }
-Delete this as well*/
 
 
 /**
