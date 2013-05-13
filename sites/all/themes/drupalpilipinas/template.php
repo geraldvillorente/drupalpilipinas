@@ -178,8 +178,18 @@ function drupalpilipinas_preprocess_node(&$variables, $hook) {
  *   The name of the template being rendered ("block" in this case.)
  */
 function drupalpilipinas_preprocess_block(&$variables) {
-  if($variables['block']->delta === 'login') {
-    $variables['block']->subject = '';
+  // print_r($variables['block']->delta);
+  switch ($variables['block']->delta) {
+    case 'login':
+      $variables['block']->subject = '';
+      break;
+
+    case 'hero-block':
+      $variables['block']->subject = '';
+			break;
+
+    default:
+			break;
   }
 }
 

@@ -66,6 +66,7 @@ body {
 
 .user-login {
   position: absolute;
+	right: 10px;
 }
 
 #name-and-slogan { /* Wrapper for website name and slogan */
@@ -234,6 +235,10 @@ span.field-label { /* The inline field label used by the Fences module */
 /*
  * Footer
  */
+
+.footer {
+  position: relative;
+}
 
 #footer {
 }

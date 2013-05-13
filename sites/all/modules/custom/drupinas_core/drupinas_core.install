@@ -57,3 +57,16 @@ function drupinas_core_update_7002() {
     array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
   );
 }
+
+
+/**
+ * UPDATE: Enable Views Slideshow module.
+ */
+function drupinas_core_update_7003() {
+  $mods = array('views_slideshow', 'views_slideshow_cycle');
+  module_enable($mods);
+
+  return array(
+    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mods) . ' have been installed.'),
+  );
+}
