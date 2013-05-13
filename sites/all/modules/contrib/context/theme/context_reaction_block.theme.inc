@@ -62,6 +62,15 @@ function theme_context_block_regions_form($vars) {
  * Use placeholder content for script tags that need to be replaced.
  */
 function theme_context_block_script_placeholder($text = '') {
+  // Hack to handle $text being an array.
+  if (is_array($text)) {
+    if (empty($text['text'])) {
+      $text = '';
+    }
+    else {
+      $text = $text['text'];
+    }
+  }
   $message = t('Please reload the page to view this block.');
   return "<div class='script-placeholder'><strong>{$text}</strong><div class='description'>{$message}</div></div>";
 }
