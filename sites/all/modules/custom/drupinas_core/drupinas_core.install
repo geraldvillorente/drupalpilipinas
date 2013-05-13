@@ -34,20 +34,26 @@ function drupinas_core_update_7000() {
 
 
 /**
- * UPDATE: Put your comment(s) here.
+ * UPDATE: Enable Drupinas Global settings feature.
  */
-/* Delete this comment when needed
 function drupinas_core_update_7001() {
+  $mod = array('drupinas_global_settings');
+  module_enable($mod);
 
+  return array(
+    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
+  );
 }
-Delete this as well*/
 
 
 /**
- * UPDATE: Put your comment(s) here.
+ * UPDATE: Enable admin module.
  */
-/* Delete this comment when needed
 function drupinas_core_update_7002() {
+  $mod = array('admin');
+  module_enable($mod);
 
+  return array(
+    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
+  );
 }
-Delete this as well*/

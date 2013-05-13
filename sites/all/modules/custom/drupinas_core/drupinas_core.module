@@ -32,8 +32,25 @@ function drupinas_core_block_info() {
     'info' => t('About Footer'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
+  $blocks['hero'] = array(
+    'info' => t('Hero'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $blocks['login'] = array(
+    'info' =>  t('Login'),
+  );
 
   return $blocks;
+}
+
+
+/**
+ * Implements hook_block_info_alter().
+ */
+function drupinas_core_block_info_alter(&$blocks, $theme, $code_blocks) {
+  $blocks['user']['login']['status'] = 0;
+  //$blocks['search']['form']['status'] = 0;
+  //$blocks['system']['navigation']['status'] = 0;
 }
 
 
@@ -68,8 +85,28 @@ function drupinas_core_block_view($delta = '') {
       $blocks['subject'] = t('Copyright');
       break;
 
+    case 'hero':
+      $blocks['content'] = '';
+      $blocks['subject'] = t('Hero');
+
+    case 'login':
+      $blocks['content'] = _user_login();
+			$blocks['subject'] = t('Login');
+
     default:
       break;
   }
   return $blocks;
+}
+
+
+/**
+ *  Helper function.
+ */
+function _user_login() {
+  $html = '';
+  if (user_is_anonymous()) {
+    $html = l(t('Login'), "user");
+  }
+  return $html;
 }

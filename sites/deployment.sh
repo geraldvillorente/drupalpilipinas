@@ -39,7 +39,6 @@ else
 	drush en delta_ui -y
 	drush en drupinas_core -y
 	drush en context_ui -y
-	drush en delta_context_omega -y
 	drush en features -y
 	drush en browscap -y
 	drush en token -y
@@ -47,7 +46,13 @@ else
 	drush en metatag -y
 	drush en views -y
 	drush en views_ui -y
+	drush en ckeditor -y
+	drush en drupalpilipinas -y
+	drush vset theme_default drupalpilipinas 1
 	
+	drush updb -y
+	drush fra -y
+	drush cc all
 	echo "All deployed. Thank you!"
 	
 	exit 1
