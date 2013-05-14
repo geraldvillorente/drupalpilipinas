@@ -45,6 +45,7 @@ body {
 #header {
   width: 100%;
   position: relative;
+  height: 55px;
 }
 
 .brand {
@@ -96,6 +97,11 @@ body {
 
 .region-header { /* Wrapper for any blocks placed in the header region */
   clear: both; /* Clear the logo */
+}
+
+.hero{
+  width: 100%;
+  height: 540px;
 }
 
 /*
@@ -238,7 +244,7 @@ span.field-label { /* The inline field label used by the Fences module */
  
 .footer-wrapper{
   width: 100%;
-  background: url(../images/footer-bg.jpg) no-repeat;
+  background: url(../images/footer-bg.jpg) no-repeat center center;
   background-size: cover;
   height: 566px;
 }
@@ -258,4 +264,15 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
+}
+
+
+/*
+ * Line Stripe
+ */
+ 
+.line-stripe{
+  background: url(../images/line-stripe.png) repeat-x;
+  height: 4px;
+  width:100%;
 }

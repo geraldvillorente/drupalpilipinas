@@ -70,7 +70,7 @@
  */
 ?>
 
-<div id="page">
+<!-- <div id="page"> -->
 
   <header id="header" role="banner">
     <div class="brand">
@@ -118,7 +118,8 @@
     <?php endif; ?>
     <?php print render($page['header']); ?>
   </header>
-
+  
+  <div class="line-stripe"></div>
   <div class="hero">
 		<?php print render($page['hero']); ?>
   </div>
@@ -159,14 +160,15 @@
 
   </div><!-- /#main -->
 
-</div><!-- /#page -->
-
+<!-- </div><!-- /#page -->
+  <div class="line-stripe"></div>
   <div class="footer-wrapper">
     <div class="footer">
       <?php print render($page['footer']); ?>
+      <?php print render($page['bottom']); ?>
     </div>
   </div>
 
 
 
-<?php print render($page['bottom']); ?>
+
