@@ -147,3 +147,16 @@ function drupinas_core_update_7009() {
     array('success' => TRUE, 'query' => 'The modules ' . implode(', ', $mod) . ' have been installed.'),
   );
 }
+
+
+/**
+ * UPDATE: Enable Date and Calendar modules.
+ */
+function drupinas_core_update_7010() {
+  $mod = array('date', 'calendar', 'date_api', 'date_views');
+  module_enable($mod);
+
+  return array(
+    array('success' => TRUE, 'query' => 'The modules ' . implode(', ', $mod) . ' have been installed.'),
+  );
+}

@@ -54,6 +54,10 @@ else
     drush en emfield -y
     drush en media_vimeo -y
     drush en media_youtube -y
+    drush en date -y
+    drush en calendar -y
+    drush en date_api -y
+    drush en date_views -y
     drush en drupalpilipinas -y
     drush vset theme_default drupalpilipinas 1
     
