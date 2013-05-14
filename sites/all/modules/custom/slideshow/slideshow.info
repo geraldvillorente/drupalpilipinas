@@ -1,7 +1,7 @@
 name = Slideshow
 description = Slideshow content type.
 core = 7.x
-package = Features
+package = DrupalPilipinas
 version = 7.x-1.0
 project = slideshow
 dependencies[] = features

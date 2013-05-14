@@ -27,6 +27,7 @@ function drupinas_global_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+<<<<<<< HEAD
   $strongarm->name = 'pathauto_node_job_pattern';
   $strongarm->value = 'job/[node:field_job_id]';
   $export['pathauto_node_job_pattern'] = $strongarm;
@@ -34,6 +35,8 @@ function drupinas_global_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+=======
+>>>>>>> master
   $strongarm->name = 'site_default_country';
   $strongarm->value = 'PH';
   $export['site_default_country'] = $strongarm;
@@ -42,14 +45,22 @@ function drupinas_global_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_mail';
+<<<<<<< HEAD
   $strongarm->value = 'adrian.domingo32@gmail.com';
+=======
+  $strongarm->value = 'gerald@ninjas-corner.com';
+>>>>>>> master
   $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_name';
+<<<<<<< HEAD
   $strongarm->value = 'dev.drupalpilipinas.org';
+=======
+  $strongarm->value = 'Drupal Pilipinas';
+>>>>>>> master
   $export['site_name'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -59,5 +70,43 @@ function drupinas_global_settings_strongarm() {
   $strongarm->value = 'drupalpilipinas';
   $export['theme_default'] = $strongarm;
 
+<<<<<<< HEAD
+=======
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_drupalpilipinas_settings';
+  $strongarm->value = array(
+    'toggle_logo' => 1,
+    'toggle_name' => 1,
+    'toggle_slogan' => 1,
+    'toggle_node_user_picture' => 1,
+    'toggle_comment_user_picture' => 1,
+    'toggle_favicon' => 1,
+    'toggle_main_menu' => 1,
+    'toggle_secondary_menu' => 1,
+    'default_logo' => 0,
+    'logo_path' => 'public://logo.png',
+    'default_favicon' => 1,
+    'favicon_path' => '',
+    'favicon_upload' => '',
+    'zen_breadcrumb' => 'yes',
+    'zen_breadcrumb_separator' => ' › ',
+    'zen_breadcrumb_home' => 1,
+    'zen_breadcrumb_trailing' => 1,
+    'zen_breadcrumb_title' => 0,
+    'zen_skip_link_anchor' => 'main-menu',
+    'zen_skip_link_text' => 'Jump to navigation',
+    'zen_html5_respond_meta' => array(
+      'respond' => 'respond',
+      'html5' => 'html5',
+      'meta' => 'meta',
+    ),
+    'zen_rebuild_registry' => 1,
+    'zen_wireframes' => 0,
+  );
+  $export['theme_drupalpilipinas_settings'] = $strongarm;
+
+>>>>>>> master
   return $export;
 }
