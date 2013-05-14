@@ -134,3 +134,16 @@ function drupinas_core_update_7008() {
     array('success' => TRUE, 'query' => 'The modules ' . implode(', ', $mod) . ' have been installed.'),
   );
 }
+
+
+/**
+ * UPDATE: Enable Media, Embedded Media Field, Media: Vimeo and Media: Youtube modules.
+ */
+function drupinas_core_update_7009() {
+  $mod = array('media', 'media_internet', 'file_entity', 'emfield', 'media_vimeo', 'media_youtube');
+  module_enable($mod);
+
+  return array(
+    array('success' => TRUE, 'query' => 'The modules ' . implode(', ', $mod) . ' have been installed.'),
+  );
+}
