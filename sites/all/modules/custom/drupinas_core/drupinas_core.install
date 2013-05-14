@@ -110,20 +110,6 @@ function drupinas_core_update_7006() {
   );
 }
 
-<<<<<<< HEAD
-/**
- * UPDATE: Enable Serial and Job module.
- */
-function drupinas_core_update_7007() {
-  $mod = array('serial', 'job');
-  module_enable($mod);
-
-  return array(
-    array('success' => TRUE, 'query' => 'The modules ' . implode(', ', $mod) . ' have been installed.'),
-  );
-}
-=======
-
 /**
  * UPDATE: Enable Strongarm module.
  */
@@ -135,4 +121,16 @@ function drupinas_core_update_7007() {
     array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
   );
 }
->>>>>>> master
+
+
+/**
+ * UPDATE: Enable Serial and Job module.
+ */
+function drupinas_core_update_7008() {
+  $mod = array('serial', 'job');
+  module_enable($mod);
+
+  return array(
+    array('success' => TRUE, 'query' => 'The modules ' . implode(', ', $mod) . ' have been installed.'),
+  );
+}
