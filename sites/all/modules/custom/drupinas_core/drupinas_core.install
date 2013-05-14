@@ -109,3 +109,16 @@ function drupinas_core_update_7006() {
     array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
   );
 }
+
+
+/**
+ * UPDATE: Enable Strongarm module.
+ */
+function drupinas_core_update_7007() {
+  $mod = array('strongarm');
+  module_enable($mod);
+
+  return array(
+    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
+  );
+}

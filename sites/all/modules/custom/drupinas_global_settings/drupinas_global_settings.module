@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Drupinas Global Settings feature.
  */
+
+include_once 'drupinas_global_settings.features.inc';
