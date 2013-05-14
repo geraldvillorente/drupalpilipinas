@@ -22,7 +22,14 @@ function slideshow_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -31,7 +38,7 @@ function slideshow_field_default_field_instances() {
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -54,33 +61,43 @@ function slideshow_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slideshow-field_main_image'
-  $field_instances['node-slideshow-field_main_image'] = array(
+  // Exported field_instance: 'node-slideshow-field_slideshow_main_image'
+  $field_instances['node-slideshow-field_slideshow_main_image'] = array(
     'bundle' => 'slideshow',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_main_image',
+    'field_name' => 'field_slideshow_main_image',
     'label' => 'Main Image',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
@@ -104,33 +121,43 @@ function slideshow_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slideshow-field_preview_image'
-  $field_instances['node-slideshow-field_preview_image'] = array(
+  // Exported field_instance: 'node-slideshow-field_slideshow_preview_image'
+  $field_instances['node-slideshow-field_slideshow_preview_image'] = array(
     'bundle' => 'slideshow',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 3,
       ),
-      'teaser' => array(
-        'label' => 'above',
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_preview_image',
+    'field_name' => 'field_slideshow_preview_image',
     'label' => 'Preview Image',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
@@ -154,29 +181,37 @@ function slideshow_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slideshow-field_subhead'
-  $field_instances['node-slideshow-field_subhead'] = array(
+  // Exported field_instance: 'node-slideshow-field_slideshow_subhead'
+  $field_instances['node-slideshow-field_slideshow_subhead'] = array(
     'bundle' => 'slideshow',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_subhead',
+    'field_name' => 'field_slideshow_subhead',
     'label' => 'Subhead',
     'required' => 0,
     'settings' => array(
@@ -194,12 +229,60 @@ function slideshow_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-slideshow-field_tags'
+  $field_instances['node-slideshow-field_tags'] = array(
+    'bundle' => 'slideshow',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Main Image');
   t('Preview Image');
   t('Subhead');
+  t('Tags');
 
   return $field_instances;
 }
