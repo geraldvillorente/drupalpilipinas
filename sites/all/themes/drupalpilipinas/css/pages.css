@@ -235,9 +235,19 @@ span.field-label { /* The inline field label used by the Fences module */
 /*
  * Footer
  */
+ 
+.footer-wrapper{
+  width: 100%;
+  background: url(../images/footer-bg.jpg) no-repeat;
+  background-size: cover;
+  height: 566px;
+}
 
 .footer {
   position: relative;
+  width: 960px;
+  margin: 0 auto;
+  color: #ffffff;
 }
 
 #footer {

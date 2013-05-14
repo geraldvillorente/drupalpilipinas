@@ -159,10 +159,14 @@
 
   </div><!-- /#main -->
 
-  <div class="footer">
-		<?php print render($page['footer']); ?>
+</div><!-- /#page -->
+
+  <div class="footer-wrapper">
+    <div class="footer">
+      <?php print render($page['footer']); ?>
+    </div>
   </div>
 
-</div><!-- /#page -->
+
 
 <?php print render($page['bottom']); ?>
