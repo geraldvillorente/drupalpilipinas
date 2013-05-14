@@ -48,6 +48,12 @@ else
     drush en views_ui -y
     drush en ckeditor -y
     drush en serial -y
+    drush en media -y
+    drush en media_internet -y
+    drush en file_entity -y
+    drush en emfield -y
+    drush en media_vimeo -y
+    drush en media_youtube -y
     drush en drupalpilipinas -y
     drush vset theme_default drupalpilipinas 1
     
