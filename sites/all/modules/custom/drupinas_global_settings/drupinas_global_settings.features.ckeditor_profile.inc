@@ -70,13 +70,7 @@ function drupinas_global_settings_ckeditor_profile_defaults() {
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
-        'ckeditor_path' => '%l/ckeditor',
-        'ckeditor_local_path' => '',
-        'ckeditor_plugins_path' => '%m/plugins',
-        'ckeditor_plugins_local_path' => '',
-        'ckfinder_path' => '%m/ckfinder',
-        'toolbar_wizard' => 't',
-        'loadPlugins' => array(),
+        'ckeditor_path' => '%m/ckeditor',
       ),
       'input_formats' => array(),
     ),
