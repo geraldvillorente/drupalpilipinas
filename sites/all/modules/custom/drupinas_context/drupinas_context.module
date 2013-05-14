@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Drupinas Context feature.
+ */
+
+include_once 'drupinas_context.features.inc';

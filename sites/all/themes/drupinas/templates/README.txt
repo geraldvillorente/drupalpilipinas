@@ -18,7 +18,7 @@ Usage Stats:    http://drupal.org/project/usage/omega
 Twitter:        http://twitter.com/Omeglicon
 ##########################################################################################
 
-The templates folder is here to organize any custom templates you have for your subhteme.
+The templates folder is here to organize any custom templates you have for your subtheme.
 The HTML5 Starterkit (and subthemes) uses all default templates in the Omega base theme, 
 and is why this directory is empty. 
 
