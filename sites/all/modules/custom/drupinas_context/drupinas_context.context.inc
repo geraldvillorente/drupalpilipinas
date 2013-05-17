@@ -29,7 +29,7 @@ function drupinas_context_context_default_contexts() {
         'system-main-menu' => array(
           'module' => 'system',
           'delta' => 'main-menu',
-          'region' => 'header',
+          'region' => 'nav',
           'weight' => '-10',
         ),
         'search-form' => array(

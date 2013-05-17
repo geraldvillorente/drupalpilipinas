@@ -117,11 +117,13 @@
       </nav>
     <?php endif; ?>
     <div class="clearfix"></div>
-    <div class="nav">
-      <?php print render($page['header']); ?>
-    </div>
+    <?php print render($page['header']); ?>
   </header>
   
+  <div class="nav">
+    <?php print render($page['nav']); ?>
+  </div>
+
   <div class="line-stripe"></div>
   <div class="hero">
 		<?php print render($page['hero']); ?>

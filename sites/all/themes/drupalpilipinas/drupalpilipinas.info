@@ -97,6 +97,7 @@ stylesheets[all][] = css/print.css
 ;   <?php print $header_top; ?>
 
 regions[header]         = Header
+regions[nav]            = Site menu
 regions[hero]           = Hero
 regions[user]           = User
 regions[navigation]     = Navigation bar
