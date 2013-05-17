@@ -31,4 +31,4 @@ function drupinas_core_update_7000() {
   return array(
     array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
   );
-}*//
+}*/
