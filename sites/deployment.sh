@@ -47,7 +47,17 @@ else
     drush en views -y
     drush en views_ui -y
     drush en ckeditor -y
+    drush dis toolbar -y
+    drush en strongarm -y
+    drush en views_slideshow -y
+    drush en views_slideshow_cycle -y
+    drush en admin -y
+    drush en hero -y
+    drush en drupinas_global_settings -y
+    drush en article -y
+    drush en slideshow -y
     drush en drupinas_menu -y
+    drush en drupinas_context -y
     drush en drupalpilipinas -y
     drush vset theme_default drupalpilipinas 1
     

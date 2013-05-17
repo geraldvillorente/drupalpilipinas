@@ -21,104 +21,14 @@ function drupinas_core_uninstall() {
 
 
 /**
- * UPDATE: Disable toolbar module.
- */
-function drupinas_core_update_7000() {
-  $mods = array('toolbar');
-  module_disable($mods);
-  
-  return array(
-    array('success' => TRUE, 'query' => 'The modules ' . implode(', ', $mods) . ' have been disabled.'),
-  );
-}
-
-
-/**
  * UPDATE: Enable Drupinas Global settings feature.
  */
-function drupinas_core_update_7001() {
+/**
+function drupinas_core_update_7000() {
   $mod = array('drupinas_global_settings');
   module_enable($mod);
 
   return array(
     array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
   );
-}
-
-
-/**
- * UPDATE: Enable admin module.
- */
-function drupinas_core_update_7002() {
-  $mod = array('admin');
-  module_enable($mod);
-
-  return array(
-    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
-  );
-}
-
-
-/**
- * UPDATE: Enable Views Slideshow module.
- */
-function drupinas_core_update_7003() {
-  $mods = array('views_slideshow', 'views_slideshow_cycle');
-  module_enable($mods);
-
-  return array(
-    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mods) . ' have been installed.'),
-  );
-}
-
-
-/**
- * UPDATE: Enable hero module.
- */
-function drupinas_core_update_7004() {
-  $mod = array('hero');
-  module_enable($mod);
-
-  return array(
-    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
-  );
-}
-
-
-/**
- * UPDATE: Enable content types modules.
- */
-function drupinas_core_update_7005() {
-  $mods = array('article', 'slideshow');
-  module_enable($mods);
-
-  return array(
-    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mods) . ' have been installed.'),
-  );
-}
-
-
-/**
- * UPDATE: Enable Context setting module.
- */
-function drupinas_core_update_7006() {
-  $mod = array('drupinas_context');
-  module_enable($mod);
-
-  return array(
-    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
-  );
-}
-
-
-/**
- * UPDATE: Enable Strongarm module.
- */
-function drupinas_core_update_7007() {
-  $mod = array('strongarm');
-  module_enable($mod);
-
-  return array(
-    array('success' => TRUE, 'query' => 'The module ' . implode(', ', $mod) . ' have been installed.'),
-  );
-}
+}*//
