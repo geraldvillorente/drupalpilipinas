@@ -119,12 +119,12 @@
     <div class="clearfix"></div>
     <?php print render($page['header']); ?>
   </header>
-  
+  <div class="line-stripe"></div>
   <div class="nav">
     <?php print render($page['nav']); ?>
   </div>
 
-  <div class="line-stripe"></div>
+  
   <div class="hero">
 		<?php print render($page['hero']); ?>
   </div>

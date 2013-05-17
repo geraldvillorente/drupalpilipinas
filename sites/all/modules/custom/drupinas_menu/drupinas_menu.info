@@ -1,6 +1,6 @@
 name = Drupinas Menu
 core = 7.x
-package = Features
+package = DrupalPilipinas
 version = 7.x-1.0
 project = drupinas_menu
 dependencies[] = features

@@ -59,14 +59,15 @@ function drupinas_global_settings_strongarm() {
   $strongarm->value = array(
     'toggle_logo' => 1,
     'toggle_name' => 1,
-    'toggle_slogan' => 1,
+    'toggle_slogan' => 0,
     'toggle_node_user_picture' => 1,
     'toggle_comment_user_picture' => 1,
     'toggle_favicon' => 1,
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
     'default_logo' => 0,
-    'logo_path' => 'public://logo_0.png',
+    'logo_path' => 'public://logo.png',
+    'logo_upload' => '',
     'default_favicon' => 1,
     'favicon_path' => '',
     'favicon_upload' => '',
@@ -82,8 +83,8 @@ function drupinas_global_settings_strongarm() {
       'html5' => 'html5',
       'meta' => 'meta',
     ),
-    'zen_rebuild_registry' => 1,
-    'zen_wireframes' => 1,
+    'zen_rebuild_registry' => 0,
+    'zen_wireframes' => 0,
   );
   $export['theme_drupalpilipinas_settings'] = $strongarm;
 
