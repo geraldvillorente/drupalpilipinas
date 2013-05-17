@@ -116,7 +116,10 @@
         )); ?>
       </nav>
     <?php endif; ?>
-    <?php print render($page['header']); ?>
+    <div class="clearfix"></div>
+    <div class="nav">
+      <?php print render($page['header']); ?>
+    </div>
   </header>
   
   <div class="line-stripe"></div>

@@ -47,6 +47,7 @@ else
     drush en views -y
     drush en views_ui -y
     drush en ckeditor -y
+    drush en drupinas_menu -y
     drush en drupalpilipinas -y
     drush vset theme_default drupalpilipinas 1
     

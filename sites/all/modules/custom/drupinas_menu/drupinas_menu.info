@@ -1,0 +1,10 @@
+name = Drupinas Menu
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = drupinas_menu
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:1
+features[menu_custom][] = main-menu
+features[menu_custom][] = menu-hero-menu

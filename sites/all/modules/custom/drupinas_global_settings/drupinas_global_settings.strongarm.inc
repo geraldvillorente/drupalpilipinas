@@ -83,7 +83,7 @@ function drupinas_global_settings_strongarm() {
       'meta' => 'meta',
     ),
     'zen_rebuild_registry' => 1,
-    'zen_wireframes' => 0,
+    'zen_wireframes' => 1,
   );
   $export['theme_drupalpilipinas_settings'] = $strongarm;
 

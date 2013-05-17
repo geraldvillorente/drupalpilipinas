@@ -26,6 +26,12 @@ function drupinas_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'system-main-menu' => array(
+          'module' => 'system',
+          'delta' => 'main-menu',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
@@ -69,6 +75,12 @@ function drupinas_context_context_default_contexts() {
           'delta' => 'hero-block',
           'region' => 'hero',
           'weight' => '-10',
+        ),
+        'menu-menu-hero-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-hero-menu',
+          'region' => 'hero',
+          'weight' => '-9',
         ),
       ),
     ),

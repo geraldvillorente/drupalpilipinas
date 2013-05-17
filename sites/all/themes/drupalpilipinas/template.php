@@ -187,6 +187,14 @@ function drupalpilipinas_preprocess_block(&$variables) {
     case 'hero-block':
       $variables['block']->subject = '';
 			break;
+   
+    case 'main-menu':
+      $variables['block']->subject = '';
+      break;
+
+    case 'menu-hero-menu':
+      $variables['block']->subject = '';
+      break;
 
     default:
 			break;
