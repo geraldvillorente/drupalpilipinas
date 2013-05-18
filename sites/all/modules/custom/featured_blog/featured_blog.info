@@ -1,10 +1,13 @@
 name = Featured Blog
 core = 7.x
 package = DrupalPilipinas
-version = 7.x-1.0
+php = 5.2.4
+version = 7.x-1.1
 project = featured_blog
+dependencies[] = image
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
+features[image][] = blog_290x191
 features[views_view][] = featured_on_blog
 features_exclude[dependencies][ctools] = ctools

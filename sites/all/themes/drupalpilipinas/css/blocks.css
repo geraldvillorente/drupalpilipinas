@@ -68,11 +68,19 @@ h2.block-title { /* Block title */
 #block-search-form { /* "Search form" block */
   display: inline-block;
   position: absolute;
+  width: 250px;
+}
+
+#block-search-form h2 {
+  display: none;
+  height: 0;
+  width: 0;
 }
 
 #block-drupinas-core-login {
   display: inline-block;
   float: right;
+  margin-top: 4px;
 }
 
 #block-drupinas-core-login a{
@@ -144,4 +152,24 @@ h2.block-title { /* Block title */
 #block-views-featured-on-blog-block p a.views-more-link {
   right: 2px;
   bottom: 0;
+}
+
+
+#block-drupinas-core-login a {
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+#block-search-form #edit-actions,
+#block-search-form #edit-actions--2 {
+  display: none;
+}
+
+#edit-search-block-form--2 {
+  outline: none;
+	border: 0 none;
+	background: #e6e6e6;
+  padding: 6px;
+  width: 100%;
+  color: #4d4d4d;
 }
