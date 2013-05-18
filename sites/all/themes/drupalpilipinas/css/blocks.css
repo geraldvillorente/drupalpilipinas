@@ -75,6 +75,11 @@ h2.block-title { /* Block title */
   float: right;
 }
 
+#block-drupinas-core-login a{
+  text-decoration:none;
+  text-transform: uppercase;
+}
+
 #block-shortcut-shortcuts { /* "Shortcuts" block */
 }
 
