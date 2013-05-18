@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Deployment script of Drupal Pilipinas
+# Created by Gerald Villorente
 
 usage() {
   echo "Ex: ./deployment.sh local|staging"
@@ -33,6 +34,8 @@ if [ -z "$ANSWER" ]; then
 else
   # Check for the supplied input.
   if [ "$ANSWER" == "Y" ]; then
+  
+    # Enable contrib modules.
     drush en ctools -y
     drush en context -y
     drush en delta -y
@@ -52,20 +55,32 @@ else
     drush en views_slideshow -y
     drush en views_slideshow_cycle -y
     drush en admin -y
+    drush en webform -y
+    drush en location -y
+    drush en location_node -y
+    drush en select_or_other -y
+
+    # Features.
     drush en hero -y
     drush en drupinas_global_settings -y
     drush en article -y
     drush en slideshow -y
     drush en drupinas_menu -y
     drush en drupinas_context -y
+
+    # Theme.
     drush en drupalpilipinas -y
     drush vset theme_default drupalpilipinas 1
-    
+
+    # Run update.php
+    # Reset Features.
+    # Force to clear the cache.
     drush updb -y
     drush fra -y
     drush cc all
+
     echo "All deployed. Thank you!"
-    
+
     exit 1
   elif [ "$ANSWER" == "N" ]; then
     echo "Don't be afraid, everythings gonna be alright. Lagot ka!"
