@@ -203,53 +203,35 @@ function drupalpilipinas_preprocess_block(&$variables) {
 
 
 /**
- * Override or insert variables into the comment templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("comment" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_comment(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
+ * Implementation of theme_form_alter()
+ * 
+ */ 
+function drupalpilipinas_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
 
-/**
- * Override or insert variables into the region templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("region" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_region(&$variables, $hook) {
-  // Don't use Zen's region--sidebar.tpl.php template for sidebars.
-  //if (strpos($variables['region'], 'sidebar_') === 0) {
-  //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('region__sidebar'));
-  //}
-}
-// */
+    // Change the text on the label element.
+    $form[$form_id]['#title'] = '';
+    // Toggle label visibilty.
+    $form[$form_id]['#title_display'] = 'invisible';
+    // Define size of the textfield.
+    $form[$form_id]['#size'] = 25;
+    if (arg(0) === 'search') {
+      $search_text = arg(2);
+      $form[$form_id]['#default_value'] = $search_text;
+    }
+    else {
+      // Set a default value for the textfield.
+      $form[$form_id]['#default_value'] = t('Type your keyword here...');
+    }
+    // Hide submit button, instead use a return key.
+    hide($form['actions']['submit']);
 
-/**
- * Override or insert variables into the block templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("block" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_block(&$variables, $hook) {
-  // Add a count to all the blocks in the region.
-  // $variables['classes_array'][] = 'count-' . $variables['block_id'];
-
-  // By default, Zen will use the block--no-wrapper.tpl.php for the main
-  // content. This optional bit of code undoes that:
-  //if ($variables['block_html_id'] == 'block-system-main') {
-  //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('block__no_wrapper'));
-  //}
+    // Add extra attributes to the text box.
+    $form[$form_id]['#attributes'] = array('class' => array('cleardefault'));
+    $form[$form_id]['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Type your keyword here...';}";
+    $form[$form_id]['#attributes']['onfocus'] = "if (this.value == 'Type your keyword here...') {this.value = '';}";
+    // Prevent user from searching the default text.
+    $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='Type your keyword here...'){ alert('Please enter a search'); return false; }";
+    //$form['basic']['keys']['#attributes']['onsubmit'] = "$('#edit-keys--2').val()";
+  }
 }
-// */
