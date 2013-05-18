@@ -68,6 +68,7 @@ else
     drush en slideshow -y
     drush en drupinas_menu -y
     drush en drupinas_context -y
+    drush en featured_blog -y
 
     # Theme.
     drush en drupalpilipinas -y

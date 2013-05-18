@@ -82,6 +82,12 @@ function drupinas_context_context_default_contexts() {
           'region' => 'hero',
           'weight' => '-9',
         ),
+        'views-featured_on_blog-block' => array(
+          'module' => 'views',
+          'delta' => 'featured_on_blog-block',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
@@ -91,6 +97,51 @@ function drupinas_context_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('homepage');
   $export['homepage'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'user';
+  $context->description = '';
+  $context->tag = 'user';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'user/*' => 'user/*',
+        'users/*' => 'users/*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'system-main-menu' => array(
+          'module' => 'system',
+          'delta' => 'main-menu',
+          'region' => 'nav',
+          'weight' => '-10',
+        ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'user',
+          'weight' => '-10',
+        ),
+        'drupinas_core-login' => array(
+          'module' => 'drupinas_core',
+          'delta' => 'login',
+          'region' => 'user',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('user');
+  $export['user'] = $context;
 
   return $export;
 }
