@@ -221,17 +221,17 @@ function drupalpilipinas_form_alter(&$form, &$form_state, $form_id) {
     }
     else {
       // Set a default value for the textfield.
-      $form[$form_id]['#default_value'] = t('Type your keyword here...');
+      $form[$form_id]['#default_value'] = t('Type your keywords here...');
     }
     // Hide submit button, instead use a return key.
     hide($form['actions']['submit']);
 
     // Add extra attributes to the text box.
     $form[$form_id]['#attributes'] = array('class' => array('cleardefault'));
-    $form[$form_id]['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Type your keyword here...';}";
-    $form[$form_id]['#attributes']['onfocus'] = "if (this.value == 'Type your keyword here...') {this.value = '';}";
+    $form[$form_id]['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Type your keywords here...';}";
+    $form[$form_id]['#attributes']['onfocus'] = "if (this.value == 'Type your keywords here...') {this.value = '';}";
     // Prevent user from searching the default text.
-    $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='Type your keyword here...'){ alert('Please enter a search'); return false; }";
+    $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='Type your keywords here...'){ alert('Please enter a search'); return false; }";
     //$form['basic']['keys']['#attributes']['onsubmit'] = "$('#edit-keys--2').val()";
   }
 }
