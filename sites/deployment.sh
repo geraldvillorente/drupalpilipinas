@@ -58,6 +58,7 @@ else
     drush en webform -y
     drush en location -y
     drush en location_node -y
+    drush en location_cck -y
     drush en select_or_other -y
 
     # Features.

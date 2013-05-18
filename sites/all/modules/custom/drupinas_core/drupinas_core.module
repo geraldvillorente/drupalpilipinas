@@ -38,6 +38,7 @@ function drupinas_core_block_info() {
   );
   $blocks['login'] = array(
     'info' =>  t('Login'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
   );
 
   return $blocks;

@@ -85,23 +85,22 @@
     
     <div class="user-login">
 			<?php print render($page['user']); ?>
+       <?php if ($secondary_menu): ?>
+				<nav id="secondary-menu" role="navigation">
+					<?php print theme('links__system_secondary_menu', array(
+						'links' => $secondary_menu,
+						'attributes' => array(
+							'class' => array('links', 'inline', 'clearfix'),
+						),
+						'heading' => array(
+							'text' => $secondary_menu_heading,
+							'level' => 'h2',
+							'class' => array('element-invisible'),
+						),
+					)); ?>
+				</nav>
+			<?php endif; ?>
     </div>
- 
-    <?php if ($secondary_menu): ?>
-      <nav id="secondary-menu" role="navigation">
-        <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => array(
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => $secondary_menu_heading,
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-      </nav>
-    <?php endif; ?>
     <div class="clearfix"></div>
     <?php print render($page['header']); ?>
   </header>
@@ -110,10 +109,11 @@
     <?php print render($page['nav']); ?>
   </div>
 
-  
-  <div class="hero">
-		<?php print render($page['hero']); ?>
-  </div>
+  <?php if (render($page['hero'])): ?>
+		<div class="hero">
+			<?php print render($page['hero']); ?>
+		</div>
+  <?php endif; ?>
 
   <div id="main">
 
@@ -121,11 +121,6 @@
       <?php print render($page['highlighted']); ?>
       <?php print $breadcrumb; ?>
       <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php print render($tabs); ?>
       <?php print render($page['help']); ?>

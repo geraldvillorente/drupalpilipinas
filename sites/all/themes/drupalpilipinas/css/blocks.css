@@ -66,6 +66,13 @@ h2.block-title { /* Block title */
 }
 
 #block-search-form { /* "Search form" block */
+  display: inline-block;
+  position: absolute;
+}
+
+#block-drupinas-core-login {
+  display: inline-block;
+  float: right;
 }
 
 #block-shortcut-shortcuts { /* "Shortcuts" block */
@@ -102,4 +109,34 @@ h2.block-title { /* Block title */
 }
 
 #block-user-online { /* "Who's online" block for a list of the online users */
+}
+
+#block-views-featured-on-blog-block {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#block-views-featured-on-blog-block td {
+  text-align: left;
+  padding-right: 10px;
+  color: #4d4d4d;
+}
+
+#block-views-featured-on-blog-block a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+#block-views-featured-on-blog-block .views-field-title {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+#block-views-featured-on-blog-block .views-field-body p {
+  position: relative;
+}
+
+#block-views-featured-on-blog-block p a.views-more-link {
+  right: 2px;
+  bottom: 0;
 }

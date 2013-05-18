@@ -66,7 +66,7 @@ function drupinas_global_settings_strongarm() {
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
     'default_logo' => 0,
-    'logo_path' => 'public://logo.png',
+    'logo_path' => 'sites/all/themes/drupalpilipinas/logo.png',
     'logo_upload' => '',
     'default_favicon' => 1,
     'favicon_path' => '',
