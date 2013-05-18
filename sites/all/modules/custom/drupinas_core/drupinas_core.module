@@ -107,7 +107,7 @@ function drupinas_core_block_view($delta = '') {
 function _user_login() {
   $html = '';
   if (user_is_anonymous()) {
-    $html = l(t('Login'), "user");
+    $html = l(t('Sign In'), "user");
   }
   return $html;
 }
