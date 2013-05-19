@@ -131,6 +131,32 @@
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
 
+		<div class="line-stripe"></div>
+    <?php if (render($page['event'])): ?>
+		<div class="event-wrapper">
+			<div class="circle-image"></div>
+			<div class="event">
+			  <?php print render($page['event']); ?>
+      </div>
+		</div>
+		<?php endif; ?>
+		
+		<div class="content-wrapper">
+    
+		<?php if(render($page['forum'])): ?>
+		<div class="forum">
+			<?php print render($page['forum']); ?>
+		</div>
+		<?php endif; ?>
+		
+		<?php if(render($page['jobs'])): ?>
+		<div class="jobs">
+			 <?php print render($page['jobs']); ?>
+		</div>
+		<?php endif; ?>
+    
+    </div>
+
     <?php
       // Render the sidebars to see if there's anything in them.
       $sidebar_first  = render($page['sidebar_first']);

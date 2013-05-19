@@ -243,6 +243,70 @@ span.field-label { /* The inline field label used by the Fences module */
  * Remember to NOT add padding or margin to your .region-sidebar-second
  * (see the layout.css file.)
  */
+.event-wrapper {
+	width: 100%;
+	background: url(../images/event-bg.jpg);
+	background-size: cover;
+	height: 300px;
+}
+
+.event {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+ .region-event .block-views .block-title {
+	padding-top: 15px;
+	font-size: 13px;
+}
+
+.circle-image {
+	width:150px;
+	height:150px;
+	background-color: #fff;
+	border-radius: 75px;
+	float: left;
+	margin: 75px 150px;
+}
+
+.content-wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.forum {
+	float: left;
+  width: 57%;
+	height: 400px;
+  padding: 20px 10px;
+}
+
+.region-forum {
+	padding: 25px 10px;
+}
+.region-forum .block-views .block-title {
+	font-size: 16px;
+	color: #acacac;
+}
+
+.jobs {
+	float: right;
+  width: 37%;
+  padding: 20px 5px;
+}
+
+.region-jobs {
+	background-color: #202427;
+	padding: 10px 20px 20px;
+}
+
+.region-jobs  .block-views .block-title {
+	font-size: 16px;
+	color: #acacac;
+	text-align: center;
+}
 
 .region-sidebar-second {
 }

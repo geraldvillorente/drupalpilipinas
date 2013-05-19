@@ -60,6 +60,9 @@ else
     drush en location_node -y
     drush en location_cck -y
     drush en select_or_other -y
+    drush en events -y
+    drush en jobs -y
+    drush en question_and_answer -y
 
     # Features.
     drush en hero -y
