@@ -6,7 +6,7 @@
       $('#block-search-form').css('right', width + 'px');
      
       if ($('#secondary-menu')) {
-        $('.region-user').css('margin-left', '186px');
+        $('.region-user').css('margin-right', '20px');
       }
     }
   };

@@ -125,12 +125,15 @@ body {
  */
 
 #content {
+  width:960px;
+  margin: 0 auto;
 }
 
 .region-highlighted {
 }
 
 .breadcrumb { /* The path to the current page in the form of a list of links */
+ margin: 20px 0 0;
 }
 .breadcrumb ol {
   margin: 0;
@@ -143,6 +146,13 @@ body {
   padding: 0;
 }
 
+.breadcrumb ol li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #dc1221;
+  
+}
+
 h1.title, /* The title of the page */
 h2.node-title, /* Title of a piece of content when it is given in a list of content */
 h2.block-title, /* Block title */
@@ -153,7 +163,7 @@ h3.title { /* Comment title */
 }
 
 tr.even { /* Some tables have rows marked even or odd. */
-  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+  /* background-color: #lineeee; */ /* Drupal core uses a #eee background */
 }
 
 tr.odd {
@@ -282,6 +292,6 @@ span.field-label { /* The inline field label used by the Fences module */
  
 .line-stripe{
   background: url(../images/line-stripe.png) repeat-x;
-  height: 4px;
+  height: 3px;
   width:100%;
 }

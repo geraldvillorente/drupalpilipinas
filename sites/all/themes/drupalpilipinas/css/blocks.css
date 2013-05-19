@@ -83,6 +83,11 @@ h2.block-title { /* Block title */
   margin-top: 4px;
 }
 
+#block-drupinas-core-login a{
+  text-decoration:none;
+  text-transform: uppercase;
+}
+
 #block-shortcut-shortcuts { /* "Shortcuts" block */
 }
 
@@ -166,4 +171,5 @@ h2.block-title { /* Block title */
 	background: #e6e6e6;
   padding: 6px;
   width: 100%;
+  color: #4d4d4d;
 }
