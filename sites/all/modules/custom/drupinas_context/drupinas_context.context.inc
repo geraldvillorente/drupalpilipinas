@@ -88,6 +88,18 @@ function drupinas_context_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
+        'views-events-block' => array(
+          'module' => 'views',
+          'delta' => 'events-block',
+          'region' => 'event',
+          'weight' => '-10',
+        ),
+        'views-jobs-block' => array(
+          'module' => 'views',
+          'delta' => 'jobs-block',
+          'region' => 'jobs',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
