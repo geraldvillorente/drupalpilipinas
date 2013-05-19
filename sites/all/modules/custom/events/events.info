@@ -1,8 +1,9 @@
 name = Events
 description = These are the list of all events.
 core = 7.x
-package = Features
-version = 7.x-1.0
+package = DrupalPilipinas
+php = 5.2.4
+version = 7.x-1.1
 project = events
 dependencies[] = article
 dependencies[] = date

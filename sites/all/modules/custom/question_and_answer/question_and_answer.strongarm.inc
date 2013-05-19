@@ -102,10 +102,7 @@ function question_and_answer_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_question_and_answer';
-  $strongarm->value = array(
-    0 => 'status',
-    1 => 'promote',
-  );
+  $strongarm->value = array();
   $export['node_options_question_and_answer'] = $strongarm;
 
   $strongarm = new stdClass();
