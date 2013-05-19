@@ -38,12 +38,12 @@ else
     # Enable contrib modules.
     drush en ctools -y
     drush en context -y
-    drush en delta -y
-    drush en delta_ui -y
+    # drush en delta -y
+    # drush en delta_ui -y
     drush en drupinas_core -y
     drush en context_ui -y
     drush en features -y
-    drush en browscap -y
+    # drush en browscap -y
     drush en token -y
     drush en pathauto -y
     drush en metatag -y
@@ -52,6 +52,7 @@ else
     drush en ckeditor -y
     drush dis toolbar -y
     drush en strongarm -y
+    drush en libraries -y
     drush en views_slideshow -y
     drush en views_slideshow_cycle -y
     drush en admin -y
@@ -60,6 +61,15 @@ else
     drush en location_node -y
     drush en location_cck -y
     drush en select_or_other -y
+    drush en date_api -y
+    drush en date -y
+    drush en date_popup -y
+    drush en diff -y
+    drush en contact -y
+    
+    # Theme.
+    drush en drupalpilipinas -y
+    drush vset theme_default drupalpilipinas 1
 
     # Features.
     drush en hero -y
@@ -69,10 +79,6 @@ else
     drush en drupinas_menu -y
     drush en drupinas_context -y
     drush en featured_blog -y
-
-    # Theme.
-    drush en drupalpilipinas -y
-    drush vset theme_default drupalpilipinas 1
 
     # Run update.php
     # Reset Features.
