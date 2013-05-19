@@ -23,7 +23,7 @@ function drupinas_core_uninstall() {
 /**
  * UPDATE: Add menu entries.
  */
-function drupinas_core_update_7009() {
+function drupinas_core_update_7000() {
   $ret = array();
 
   global $base_url;
