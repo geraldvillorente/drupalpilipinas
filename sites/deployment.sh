@@ -90,7 +90,7 @@ else
     drush en events -y
     drush en jobs -y
     drush en question_and_answer -y
-    drush en blog -y
+    drush en drupinasblog -y
 
     # Run update.php
     # Reset Features.
