@@ -37,6 +37,7 @@ else
   
     # Enable contrib modules.
     drush en ctools -y
+    drush en entity -y
     drush en context -y
     # drush en delta -y
     # drush en delta_ui -y
@@ -74,6 +75,9 @@ else
     drush en link -y
     drush en oembedcore -y
     drush en oembedfield -y
+    drush en field_group -y
+    drush en profile2 -y
+    drush en profile2_page -y
     
     # Theme.
     drush en drupalpilipinas -y
