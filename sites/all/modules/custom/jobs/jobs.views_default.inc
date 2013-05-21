@@ -32,6 +32,15 @@ function jobs_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_pin_image']['id'] = 'field_pin_image';
+  $handler->display->display_options['fields']['field_pin_image']['table'] = 'field_data_field_pin_image';
+  $handler->display->display_options['fields']['field_pin_image']['field'] = 'field_pin_image';
+  $handler->display->display_options['fields']['field_pin_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_pin_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';

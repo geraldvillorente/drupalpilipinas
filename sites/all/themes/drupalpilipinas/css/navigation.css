@@ -167,19 +167,31 @@ li a.active {
 }
 
 #block-menu-menu-hero-menu ul li.leaf {
-  background: #014693;
+  background-color: #014693;
   padding: 20px 0;
 }
+
+#block-menu-menu-hero-menu ul li.leaf:hover {
+  background-color: #436EAB;
+}
+
 #block-menu-menu-hero-menu ul li.first.leaf {
-  background: #dc1221;
-	padding: 20px 0;
+  background-color: #dc1221;
+  padding: 20px 0;
+}
+
+#block-menu-menu-hero-menu ul li.first.leaf:hover {
+  background-color: #D8625C;
 }
 
 #block-menu-menu-hero-menu ul li.last.leaf {
-  background: #fecf1b;
+  background-color: #fecf1b;
   padding: 20px 0;
 }
 
+#block-menu-menu-hero-menu ul li.last.leaf:hover {
+  background-color: #ECEB5E;
+}
 
 #block-menu-menu-hero-menu ul li a {
   font-size: 20px;

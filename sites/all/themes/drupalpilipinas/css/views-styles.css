@@ -12,6 +12,12 @@
  * pages. If your sub-theme isn't used for admin pages, you can remove this
  * entire section.
  */
+.views-label {
+ display:none;
+}
+.event .views-field-title .field-content a{
+ font-size: 25px;
+}
 
 .views-displays .secondary li {
   float: none;

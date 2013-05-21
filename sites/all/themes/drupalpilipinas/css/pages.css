@@ -69,7 +69,7 @@ body {
 
 .user-login {
   position: absolute;
-	right: 10px;
+  right: 10px;
   width: 65%;
   margin-top: 10px;
 }
@@ -251,34 +251,48 @@ span.field-label { /* The inline field label used by the Fences module */
  * Second sidebar (on right in LTR languages, on left in RTL)
  *
  * Remember to NOT add padding or margin to your .region-sidebar-second
- * (see the layout.css file.)
+ * .her(see the layout.css file.)
+ */
+ 
+ /*
+ * Event
  */
 .event-wrapper {
-	width: 100%;
-	background: url(../images/event-bg.jpg);
-	background-size: cover;
-	height: 300px;
+  background: url(../images/event-bg.jpg);
+  background-size: cover;
+  height: 320px;
 }
 
 .event {
-  position: relative;
-  width: 960px;
-  margin: 0 auto;
   color: #ffffff;
 }
 
- .region-event .block-views .block-title {
-	padding-top: 15px;
-	font-size: 13px;
+.event .field-content a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.event .field-content a:hover {
+  text-decoration: underline;
+}
+
+.region-event .block-views .block-title {
+  padding: 15px 0 35px 0;
+  font-size: 13px;
+}
+.region-event .contextual-links-region .block-title a{
+  color: #FFF;
+  clear: both;
+  margin-bottom:150px;
 }
 
 .circle-image {
-	width:150px;
-	height:150px;
-	background-color: #fff;
-	border-radius: 75px;
-	float: left;
-	margin: 75px 150px;
+  width:220px;
+  height:220px;
+  background-color: #fff;
+  border-radius: 75%;
+  float: left;
+  margin: 40px 100px;
 }
 
 .content-wrapper {
@@ -286,36 +300,72 @@ span.field-label { /* The inline field label used by the Fences module */
   margin: 0 auto;
 }
 
+/*
+ * Forum
+ */
 .forum {
-	float: left;
-  width: 57%;
-	height: 400px;
-  padding: 20px 10px;
+  margin-top: 30px;
+  float: left;
+  width: 30%;
+  height: 400px;
+  position:absolute;
 }
 
 .region-forum {
-	padding: 25px 10px;
+  padding: 20px 10px;
 }
 .region-forum .block-views .block-title {
-	font-size: 16px;
-	color: #acacac;
+  font-size: 16px;
+  color: #acacac;
 }
 
+.region-forum .field-content a {
+  color: #acacac;
+}
+
+/*
+ * Job
+ */
 .jobs {
-	float: right;
-  width: 37%;
-  padding: 20px 5px;
+  float: right;
+  width: 45%;
+  padding: 70px 10px;
 }
 
 .region-jobs {
-	background-color: #202427;
-	padding: 10px 20px 20px;
+  background-color: #202427;
+  padding: 10px 15px 2px;
 }
 
 .region-jobs  .block-views .block-title {
-	font-size: 16px;
-	color: #acacac;
-	text-align: center;
+  font-size: 16px;
+  color: #acacac;
+  text-align: center;
+}
+
+.region-jobs .block-views .view-jobs .views-row-odd {
+ margin-top: 30px;
+ background-color: #DEF077;
+ padding: 20px;
+ text-align: center;
+ transform:rotate(1deg);
+-ms-transform:rotate(1deg); /* IE 9 */
+-webkit-transform:rotate(1deg); /* Safari and Chrome */
+}
+
+.region-jobs .block-views .view-jobs .views-row-even  {
+ margin-top: 30px;
+ background-color: #DEF077;
+ padding: 20px;
+ text-align: center;
+  transform:rotate(-1deg);
+-ms-transform:rotate(-1deg); /* IE 9 */
+-webkit-transform:rotate(-1deg); /* Safari and Chrome */
+}
+
+.region-jobs .view-all-available-job a {
+ color: #FFF;
+ margin-left: 140px;
 }
 
 .region-sidebar-second {
@@ -337,6 +387,15 @@ span.field-label { /* The inline field label used by the Fences module */
   width: 960px;
   margin: 0 auto;
   color: #ffffff;
+}
+
+.footer .contextual-links-region {
+ font-size: 12px;
+ margin-top: 450px;
+}
+
+.region-footer a{
+ color: #fff;
 }
 
 #footer {
