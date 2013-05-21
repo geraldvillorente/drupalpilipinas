@@ -76,8 +76,30 @@ else
     drush en oembedcore -y
     drush en oembedfield -y
     drush en field_group -y
+    
+    # Profile
     drush en profile2 -y
     drush en profile2_page -y
+    
+    # Q & A
+    drush en entityreference -y
+    drush en references -y
+    drush en eva -y
+    drush en node_reference -y 
+    drush en nodereference_count -y
+    drush en nodereference_url -y
+    drush en answers -y
+    
+    # Mapping
+    drush en geophp -y
+    drush en geofield -y
+    drush en geofield_map -y
+    drush en leaflet -y
+    drush en leaflet_views -y
+    drush en leaflet_more_maps -y
+    drush en proj4js -y
+    drush en openlayers -y
+    drush en openlayers_ui -y
     
     # Theme.
     drush en drupalpilipinas -y
