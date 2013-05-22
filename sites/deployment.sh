@@ -97,7 +97,6 @@ else
     drush en leaflet -y
     drush en leaflet_views -y
     drush en leaflet_more_maps -y
-    drush en proj4js -y
     drush en openlayers -y
     drush en openlayers_ui -y
     
