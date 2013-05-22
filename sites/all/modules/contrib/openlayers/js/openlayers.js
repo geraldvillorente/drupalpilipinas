@@ -29,22 +29,17 @@ Drupal.settings.openlayers.maps = {};
  */
 Drupal.behaviors.openlayers = {
   'attach': function(context, settings) {
-    Drupal.openlayers.loadProjections(context, settings);
-
     if (typeof(Drupal.settings.openlayers) === 'object' &&
         Drupal.settings.openlayers.maps &&
         !$(context).data('openlayers')) {
-      $('.openlayers-map').once('openlayers-map', function() {
+      $('.openlayers-map:not(.openlayers-processed)').each(function() {
         // By setting the stop_render variable to TRUE, this will
         // halt the render process.  If set, one could remove this setting
         // then call Drupal.attachBehaviors again to get it started
         var map_id = $(this).attr('id');
         if (Drupal.settings.openlayers.maps[map_id] && Drupal.settings.openlayers.maps[map_id].stop_render != true) {
           var map = Drupal.settings.openlayers.maps[map_id];
-
-          if(map.default_layer===null){
-            Drupal.openlayers.console.error("Map configuration is invalid as it lacks a base layer.");
-          }
+          $(this).addClass('openlayers-processed');
 
           // Use try..catch for error handling.
           try {
@@ -52,14 +47,24 @@ Drupal.behaviors.openlayers = {
             // rather than browser language
             OpenLayers.Lang.setCode($('html').attr('lang'));
 
+            $(this)
+              // @TODO: move this into markup in theme function, doing this dynamically is a waste.
+              .css('width', map.width)
+              .css('height', map.height);
+
             var options = {};
             // This is necessary because the input JSON cannot contain objects
-            options.projection = new OpenLayers.Projection(map.projection);
-            options.displayProjection = new OpenLayers.Projection(map.displayProjection);
+            options.projection = new OpenLayers.Projection('EPSG:' + map.projection);
+            options.displayProjection = new OpenLayers.Projection('EPSG:' + map.displayProjection);
 
-            // Restrict map to its extent (usually projection extent).
-            if (OpenLayers.Util.isArray(options.maxExtent)) {
-              options.maxExtent = new OpenLayers.Bounds.fromArray(map.maxExtent);
+            // TODO: work around this scary code
+            if (map.projection === '900913') {
+              options.maxExtent = new OpenLayers.Bounds(
+                -20037508.34, -20037508.34, 20037508.34, 20037508.34);
+                options.units = "m";
+            }
+            if (map.projection === '4326') {
+              options.maxExtent = new OpenLayers.Bounds(-180, -90, 180, 90);
             }
 
             options.maxResolution = 'auto'; // 1.40625;
@@ -80,15 +85,10 @@ Drupal.behaviors.openlayers = {
             }
 
             // Initialize openlayers map
-            var openlayers = new OpenLayers.Map(map_id, options);
+            var openlayers = new OpenLayers.Map(map.id, options);
 
             // Run the layer addition first
             Drupal.openlayers.addLayers(map, openlayers);
-
-            // Ensure redraw as maps stays blank until first zoom otherwise (observed with EPSG:2056)
-            openlayers.moveTo(openlayers.getCenter(), openlayers.getZoom(), {
-              forceZoomChange: true
-            });
 
             // Attach data to map DOM object
             $(this).data('openlayers', {'map': map, 'openlayers': openlayers});
@@ -97,17 +97,13 @@ Drupal.behaviors.openlayers = {
             Drupal.attachBehaviors(this);
 
             if ($.browser.msie) {
-              $(window).load(function() {
-                openlayers.render(map.id);
-              });
-            } else {
-              openlayers.render(map.id);
+              Drupal.openlayers.redrawVectors();
             }
           }
           catch (e) {
             var errorMessage = e.name + ': ' + e.message;
             if (typeof console != 'undefined') {
-              Drupal.openlayers.console.log(errorMessage);
+              console.log(errorMessage);
             }
             else {
               $(this).text('Error during map rendering: ' + errorMessage);
@@ -163,12 +159,13 @@ Drupal.openlayers = {
 
     var sorted = [];
     for (var name in map.layers) {
-      sorted.push({'name': name, 'weight': map.layers[name].weight, 'isBaseLayer': map.layers[name].isBaseLayer });
+      //sorted.push({'name': name, 'weight': map.layers[name].weight });
+      sorted.push({'name': name, 'weight': map.layers[name].weight, 'baselayer': map.layers[name].baselayer });
     }
-
     sorted.sort(function(a, b) {
       var x = parseInt(a.weight, 10), y = parseInt(b.weight, 10);
-      return ((a.isBaseLayer && x < y) ? -1 : ((b.isBaseLayer || x > y) ? 1 : 0));
+     // return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+      return ((a.baselayer && x < y) ? -1 : ((b.baselayer || x > y) ? 1 : 0));
     });
 
     for (var i = 0; i < sorted.length; ++i) {
@@ -181,12 +178,17 @@ Drupal.openlayers = {
       // Ensure that the layer handler is available
       if (options.layer_handler !== undefined &&
         Drupal.openlayers.layer[options.layer_handler] !== undefined) {
-        layer = Drupal.openlayers.layer[options.layer_handler](map.layers[name].title, map, options);
+        var layer = Drupal.openlayers.layer[options.layer_handler](map.layers[name].title, map, options);
 
         layer.visibility = !!(!map.layer_activated || map.layer_activated[name]);
 
         if (layer.isBaseLayer === false) {
           layer.displayInLayerSwitcher = (!map.layer_switcher || map.layer_switcher[name]);
+        }
+
+        if (map.center.wrapdateline === '1') {
+          // TODO: move into layer specific settings
+          layer.wrapDateLine = true;
         }
 
         openlayers.addLayer(layer);
@@ -198,27 +200,15 @@ Drupal.openlayers = {
     // Set the restricted extent if wanted.
     // Prevents the map from being panned outside of a specfic bounding box.
     if (typeof map.center.restrict !== 'undefined' && map.center.restrict.restrictextent) {
-      var desiredRestriction = OpenLayers.Bounds.fromString(
-          map.center.restrict.restrictedExtent
-      ).transform(new OpenLayers.Projection('EPSG:3857'), openlayers.projection);
-
-      if(desiredRestriction.left>=openlayers.maxExtent.left && desiredRestriction.right<=openlayers.maxExtent.right
-        && desiredRestriction.top<=openlayers.maxExtent.top && desiredRestriction.bottom>=openlayers.maxExtent.bottom){
-
-        openlayers.restrictedExtent = desiredRestriction;
-      } else {
-        // Given the map to set the restricted extent is not dependent on the map projection
-        // it does allow to set an extent outwith the valid bound of the map projection. As a
-        // result no valid data could be requested and thus the wrong extent needs to be ignored.
-        Drupal.openlayers.console.error("Restricted bounds ignored as not within projection bounds.");
-      }
+      openlayers.restrictedExtent = OpenLayers.Bounds.fromString(
+          map.center.restrict.restrictedExtent);
     }
 
     // Zoom & center
     if (map.center.initial) {
       var center = OpenLayers.LonLat.fromString(map.center.initial.centerpoint).transform(
         new OpenLayers.Projection('EPSG:4326'),
-        new OpenLayers.Projection(map.projection));
+        new OpenLayers.Projection('EPSG:' + map.projection));
       var zoom = parseInt(map.center.initial.zoom, 10);
       openlayers.setCenter(center, zoom, false, false);
     }
@@ -250,14 +240,14 @@ Drupal.openlayers = {
         }
 
         // Go through new features
-        for (var i = 0; i < newFeatureSet.length; i++) {
+        for (var i in newFeatureSet) {
           var newFeature = newFeatureSet[i];
 
           // Transform the geometry if the 'projection' property is different from the map projection
           if (feature.projection) {
             if (feature.projection !== map.projection) {
-              var featureProjection = new OpenLayers.Projection(feature.projection);
-              var mapProjection = new OpenLayers.Projection(map.projection);
+              var featureProjection = new OpenLayers.Projection('EPSG:' + feature.projection);
+              var mapProjection = new OpenLayers.Projection('EPSG:' + map.projection);
               newFeature.geometry.transform(featureProjection, mapProjection);
             }
           }
@@ -397,57 +387,7 @@ Drupal.openlayers = {
     openlayers.addControl(control);
     control.activate();
     return control;
-  },
-
-  /**
-   * Instructs the Proj4js module to make projection definitions available
-   * to Proj4js and thus OpenLayers, too.
-   *
-   * Triggering the initialization of Proj4js this way guarantees projection
-   * definitions are available.
-   */
-  'loadProjections': function(context, settings){
-    // Proj4js is not necessarily present as we only load it when OpenLayers
-    // can't handle the projections is use without its help.
-    if(Drupal.behaviors.proj4js){
-      Drupal.behaviors.proj4js.attach(context, settings);
-    }
-  },
-
-  /**
-   * Logging implementation that logs using the browser's logging API.
-   * Falls back to doing nothing in case no such API is available. Simulates
-   * the presece of Firebug's console API in Drupal.openlayers.console.
-   */
-  'console': (function(){
-    var api = {};
-    var logger;
-    if(typeof(console)==="object" && typeof(console.log)==="function"){
-      logger = function(){
-        // Use console.log as fallback for missing parts of API if present.
-        console.log.apply(console, arguments);
-      }
-    } else {
-      logger = function (){
-        // Ignore call as no logging facility is available.
-      };
-    }
-    jQuery(["log", "debug", "info", "warn", "exception", "assert", "dir",
-      "dirxml", "trace", "group", "groupEnd", "groupCollapsed", "profile",
-      "profileEnd", "count", "clear", "time", "timeEnd", "timeStamp", "table",
-      "error"]).each(function(index, functionName){
-      if(typeof(console)!=="object" || typeof(console[functionName])!=="function"){
-        // Use fallback as browser does not provide implementation.
-        api[functionName] = logger;
-      } else {
-        api[functionName] = function(){
-          // Use browsers implementation.
-          console[functionName].apply(console, arguments);
-        };
-      }
-    });
-    return api;
-  })()
+  }
 };
 
 Drupal.openlayers.layer = {};

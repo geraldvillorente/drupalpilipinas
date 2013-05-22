@@ -36,7 +36,7 @@ class openlayers_views_style_data extends views_plugin_style {
       if (!empty($data)) {
         $keys = array_keys($data);
         foreach ($data[$keys[0]]['attributes'] as $key => $value) {
-          $output .= '${' . $key . "}\n";
+          $output .= '${'.$key."}\n";
         }
       }
       $output .= "\n------------\n";
@@ -105,6 +105,7 @@ class openlayers_views_style_data extends views_plugin_style {
       ),
       '#default_value' => $this->options['data_source']['value'],
     );
+
     if (count($fields > 0)) {
       $form['data_source']['other_lat'] = array(
         '#type' => 'select',
@@ -236,15 +237,6 @@ class openlayers_views_style_data extends views_plugin_style {
         ),
       );
     }
-    $form['data_source']['style_field'] = array(
-      '#type'          => 'select',
-      '#title'         => t('Style Field'),
-      '#description'   => t('Choose the field which will appear as a style on '
-        . 'the layer.'),
-      '#required'      => FALSE,
-      '#options'       => array('' => '', ) + $fields,
-      '#default_value' => $this->options['data_source']['style_field'],
-    );
 
     // A simple way to display attributes and styling
     $form['attributes'] = array(
@@ -337,17 +329,14 @@ class openlayers_views_style_data extends views_plugin_style {
           if ($this->options['data_source']['description_field'] === '#node' &&
             is_object($record) && isset($record->nid)) {
             $view_mode = $this->options['data_source']['view_mode'] ? $this->options['data_source']['view_mode'] : 'full';
-            // This has to be done to avoid warning on some version of PHP.
-            $node_view = node_view(node_load($record->nid), $view_mode);
-            $attributes['#node_rendered'] = drupal_render($node_view);
+            $attributes['#node_rendered'] = drupal_render(node_view(node_load($record->nid), $view_mode));
           }
         }
 
         // Create features array.
         $feature = array(
-          'projection' => 'EPSG:4326',
+          'projection' => '4326',
           'attributes' => $attributes,
-          'style' => $this->get_style($attributes, $handlers, $this->options['data_source'], $record),
           'wkt' => $this->get_wkt($attributes, $handlers, $this->options['data_source']),
         );
         $features = $this->reduce_features($this->options['grouping'], $features, $feature, $title);
@@ -372,40 +361,6 @@ class openlayers_views_style_data extends views_plugin_style {
    */
   function datasource_dependent($type) {
     return array('visible' => array('#edit-style-options-data-source-value' => array('value' => $type)));
-  }
-
-  /**
-   * Find and compute styling attributes.
-   */
-  function get_style($feature, $handlers, $datasource, $record) {
-    $style = NULL;
-
-    if (isset($datasource['style_field']) && !empty($datasource['style_field'])) {
-      $style_field = $handlers[$datasource['style_field']];
-      // Check if field is not empty
-      if ($style_field->original_value) {
-        $style = $style_field->options['settings'];
-
-        if ($style_field->original_value) {
-          $image_info = image_get_info($style_field->original_value);
-          $style['graphicWidth'] = $image_info['width'];
-          $style['graphicHeight'] = $image_info['height'];
-
-          unset($style['imageStyle']);
-          $style['externalGraphic'] = file_create_url($style_field->original_value);
-        }
-
-        foreach ($style as $prop => $value) {
-          if (is_numeric($value)) {
-            $style[$prop] = (float) $value;
-          }
-          if (empty($value)) {
-            unset($style[$prop]);
-          }
-        }
-      }
-    }
-    return $style;
   }
 
   /**
@@ -461,10 +416,10 @@ class openlayers_views_style_data extends views_plugin_style {
         $formatted_features[] = theme('openlayers_views_group_display_item',
           array(
             'name' => isset($handlers[$ds['name_field']]) ?
-              $subfeature['attributes'][$ds['name_field'] . '_rendered'] : FALSE,
+              $subfeature['attributes'][$ds['name_field'] . '_rendered'] : false,
             'description' => (in_array($ds['description_field'], $exceptions) ||
               isset($handlers[$ds['description_field']])) ?
-              $subfeature['attributes'][$ds['description_field'] . '_rendered'] : FALSE
+              $subfeature['attributes'][$ds['description_field'] . '_rendered'] : false
           )
         );
 
@@ -488,9 +443,66 @@ class openlayers_views_style_data extends views_plugin_style {
    * openlayers_views_style_data specific
    */
   function get_group_wkt($wkt_array) {
-    geophp_load();
-    $geophp = geoPHP::load($wkt_array, 'wkt');
-    return $geophp->out('wkt');
+    //@@TODO: DO this in geoPHP - four lines of code...
+    $output = 'GEOMETRYCOLLECTION(';
+    $i = 0;
+    foreach ($wkt_array as $wkt) {
+      $wkt = strtoupper($wkt);
+      if ($i != 0) {
+        $output .= ',';
+      }
+      switch (substr($wkt,0,5)) {
+        case 'POINT':
+        case 'LINES':
+        case 'POLYG':
+          $output .= $wkt;
+          break;
+        case 'MULTI':
+          $subwkt = str_replace(array('MULTIPOINT','MULTIPOLYGON','MULTILINESTRING'),'',$wkt);
+          $subwkt = str_replace(', ',',',$subwkt);
+          $subwkt = trim($subwkt);
+          switch (substr($wkt,0,10)) {
+            case 'MULTIPOINT':
+              $subwkt = str_replace(array('(',')'),'',$subwkt);
+              $parts = explode(',',$subwkt);
+              $j = 0;
+              foreach ($parts as $part) {
+                if ($j != 0) $output .= ',';
+                $output .= 'POINT('.$part.')';
+                $j++;
+              }
+              break;
+            case 'MULTILINES':
+              $subwkt = str_replace(array('((','))'),'',$subwkt);
+              $parts = explode('),(',$subwkt);
+              $j = 0;
+              foreach ($parts as $part) {
+                if ($j != 0) $output .= ',';
+                $output .= 'LINESTRING('.$part.')';
+                $j++;
+              }
+              break;
+            case 'MULTIPOLYG':
+              //@@TODO: This does not support polygons with holes
+              $subwkt = str_replace(array('(((',')))'),'',$subwkt);
+              $parts = explode(')),((',$subwkt);
+              $j = 0;
+              foreach ($parts as $part) {
+                if ($j != 0) $output .= ',';
+                $output .= 'POLYGON(('.$part.'))';
+                $j++;
+              }
+              break;
+          }
+          break;
+        case 'GEOME':
+          $output .= trim(substr($wkt,18,-1));
+          break;
+      }
+      $i++;
+    }
+    $output .= ')';
+    return $output;
   }
 
   /**
