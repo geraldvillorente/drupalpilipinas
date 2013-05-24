@@ -418,3 +418,32 @@ span.field-label { /* The inline field label used by the Fences module */
   height: 3px;
   width:100%;
 }
+
+/* Profile */
+.entity-profile2 .field {
+  padding: 6px 0;
+}
+
+.entity-profile2 div .field-label-inline .field-label {
+  width: 200px;
+}
+
+.entity-profile2 div .field-name-field-profile-image {
+  float: left;
+  margin-right: 10px;
+}
+
+.entity-profile2 div .field-name-field-profile-name + div {
+  clear: both;
+}
+
+.entity-profile2 div .field-name-field-profile-name {
+  font-size: 2em;
+	border-bottom: 2px solid #000;
+	width: 100%;
+  clear: both;
+}
+
+.entity-profile2 div .field-label-inline .field-items a {
+  color: #0678BE;
+}

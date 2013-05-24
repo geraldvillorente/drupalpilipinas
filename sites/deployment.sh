@@ -116,6 +116,7 @@ else
     drush en jobs -y
     drush en question_and_answer -y
     drush en drupinasblog -y
+    drush en drupinas_profile -y
 
     # Run update.php
     # Reset Features.

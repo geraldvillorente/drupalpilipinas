@@ -61,3 +61,12 @@
   -o-border-radius: 0 0 7px 7px;
   border-radius: 0 0 7px 7px;
 }
+
+.hero .views-slideshow-cycle-main-frame-row,
+.hero .views-slideshow-cycle-main-frame {
+  width: 100% !important;
+}
+
+.hero .views-slideshow-cycle-main-frame-row img {
+  width: 100%;
+}
