@@ -74,7 +74,7 @@ function featured_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
   $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'READ MORE';
+  $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'READ MORE »';
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[path] ';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
