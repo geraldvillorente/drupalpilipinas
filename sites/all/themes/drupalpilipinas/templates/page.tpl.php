@@ -156,6 +156,18 @@
     
     </div>
 
+   <?php if(render($page['resources'])): ?>
+      <div class="resources">
+         <?php print render($page['resources']); ?>
+     </div>
+   <?php endif;?>  
+
+   <?php if(render($page['sponsors'])): ?>
+       <div class="sponsors">
+         <?php print render ($page['sponsors']); ?>
+       </div>
+   <?php endif;?>
+     
     <?php
       // Render the sidebars to see if there's anything in them.
       $sidebar_first  = render($page['sidebar_first']);

@@ -44,6 +44,12 @@ function drupinas_context_context_default_contexts() {
           'region' => 'user',
           'weight' => '-9',
         ),
+        'menu-menu-navigate' => array(
+          'module' => 'menu',
+          'delta' => 'menu-navigate',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
@@ -87,6 +93,18 @@ function drupinas_context_context_default_contexts() {
           'delta' => 'featured_on_blog-block',
           'region' => 'content',
           'weight' => '-9',
+        ),
+        'views-sponsors-block' => array(
+          'module' => 'views',
+          'delta' => 'sponsors-block',
+          'region' => 'content',
+          'weight' => '-8',
+        ),
+        'views-resources-block' => array(
+          'module' => 'views',
+          'delta' => 'resources-block',
+          'region' => 'content',
+          'weight' => '-7',
         ),
         'views-events-block' => array(
           'module' => 'views',
