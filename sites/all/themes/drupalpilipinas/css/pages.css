@@ -387,7 +387,7 @@ margin: 30px 0;
 
 .region-jobs .block-views .view-jobs .views-row-odd {
  margin-top: 30px;
- background-color: #DEF077;
+ background: url("../images/button.png") no-repeat center 10%, #DEF078;
  padding: 20px;
  text-align: center;
  transform:rotate(1deg);
@@ -397,17 +397,28 @@ margin: 30px 0;
 
 .region-jobs .block-views .view-jobs .views-row-even  {
  margin-top: 30px;
- background-color: #DEF077;
+ background: url("../images/button.png") no-repeat center 10%, #DEF078;
+ 
  padding: 20px;
  text-align: center;
-  transform:rotate(-1deg);
--ms-transform:rotate(-1deg); /* IE 9 */
--webkit-transform:rotate(-1deg); /* Safari and Chrome */
+ transform:rotate(-1deg);
+ -ms-transform:rotate(-1deg); /* IE 9 */
+ -webkit-transform:rotate(-1deg); /* Safari and Chrome */
 }
 
 .region-jobs .view-all-available-job a {
- color: #FFF;
- margin-left: 140px;
+  color: #FFF;
+  margin-left: 140px;
+}
+.jobs .view-footer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.jobs .view-footer a{
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .region-sidebar-second {
@@ -489,3 +500,10 @@ margin: 30px 0;
 .entity-profile2 div .field-label-inline .field-items a {
   color: #0678BE;
 }
+
+
+/*
+ * Jobs Page
+ */
+ 
+ #content  {
