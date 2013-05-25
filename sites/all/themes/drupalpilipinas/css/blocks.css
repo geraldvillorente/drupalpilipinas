@@ -141,6 +141,8 @@ h2.block-title { /* Block title */
 #block-views-featured-on-blog-block td {
   text-align: left;
   padding-right: 10px;
+  vertical-align: top;
+  width: 300px;
 
 }
 
