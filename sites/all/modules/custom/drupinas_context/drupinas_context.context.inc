@@ -94,18 +94,6 @@ function drupinas_context_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
-        'views-sponsors-block' => array(
-          'module' => 'views',
-          'delta' => 'sponsors-block',
-          'region' => 'content',
-          'weight' => '-8',
-        ),
-        'views-resources-block' => array(
-          'module' => 'views',
-          'delta' => 'resources-block',
-          'region' => 'content',
-          'weight' => '-7',
-        ),
         'views-events-block' => array(
           'module' => 'views',
           'delta' => 'events-block',

@@ -433,7 +433,9 @@ margin: 30px 0;
 
 .footer .contextual-links-region {
  font-size: 12px;
- margin-top: 450px;
+}
+footer .menu ul {
+ float : left;
 }
 
 .region-footer a{

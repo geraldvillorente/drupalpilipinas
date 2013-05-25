@@ -186,156 +186,139 @@ function drupinas_core_update_7002() {
   $ret = array();
 
   global $base_url;
-  $menus = array(
-	  array(
-		  'menu_navigate'=> 'menu-navigate',
-		  'title'        => 'Navigate',
-		  'description'  => 'Navigate',
-		),
-	);
+  $menu = array(
+		'menu_name'=> 'menu-navigate',
+		'title'        => 'Navigate',
+		'description'  => 'Navigate',
+	);   
+
 
   $links = array(
 		array(
-			array(
-				'link_title' => 'About',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 0,
-				'expanded'   => 0,
-			),
-			array(
-				'link_title' => 'Events',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 1,
-				'expanded'   => 0,
-			),
-			array(
-				'link_title' => 'Galleries',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 2,
-				'expanded'   => 0,
-			),
-			array(
-				'link_title' => 'Galleries',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 3,
-				'expanded'   => 0,
-			),
-			array(
-				'link_title' => 'Images',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 4,
-				'expanded'   => 0,
-			),
-			array(
-				'link_title' => 'Videos',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 5,
-				'expanded'   => 0,
-			),
-			array(
-				'link_title' => 'Projects',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 6,
-				'expanded'   => 0,
-			),
+			'link_title' => 'About',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 0,
+			'expanded'   => 0,
 		),
 		array(
-			array(
-				'link_title' => 'Blog',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 0,
-				'expanded'   => 0,
-		  ),
-			array(
-				'link_title' => 'Videos',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 1,
-				'expanded'   => 0,
-			),
-			array(
-				'link_title' => 'Downloads',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 2,
-				'expanded'   => 0,
-		  ),
+			'link_title' => 'Events',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 1,
+			'expanded'   => 0,
 		),
 		array(
-			array(
-				'link_title' => 'Community',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 1,
-				'expanded'   => 0,
-		  ),
-			array(
-				'link_title' => 'Jobs',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 2,
-				'expanded'   => 0,
-			),
-			array(
-				'link_title' => 'Sponsors',
-				'link_path'  => '<front>',
-				'menu_navigate'  => 'menu-navigate',
-				'weight'     => 3,
-				'expanded'   => 0,
-		  ),
+			'link_title' => 'Galleries',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 2,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Images',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+      'parent' => 
+			'weight'     => 3,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Videos',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 4,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Projects',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 5,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Blog',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 0,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Videos',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 1,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Downloads',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 2,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Community',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 1,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Jobs',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 2,
+			'expanded'   => 0,
+		),
+		array(
+			'link_title' => 'Sponsors',
+			'link_path'  => '<front>',
+			'menu_name'  => 'menu-navigate',
+			'weight'     => 3,
+			'expanded'   => 0,
 		),
 	);
 
-  // Save menu group into menu_custom table.
-  foreach($menus as $menu) {
-    // Look the table first if the data does exist.
-    $exists = db_query("SELECT title FROM {menu_custom} WHERE menu_navigate=:menu_navigate", 
-			array(
-				':menu_navigate' => $menu['menu_navigate'],
-			)
+  print_r($menus);
+
+	// Look the table first if the data does exist.
+	$exists = db_query("SELECT title FROM {menu_custom} WHERE menu_name=:menu_name", 
+		array(
+			':menu_name' => $menu['menu_name'],
 		)
-		->fetchField();
-    // Save the record if the data does not exist.
-    if (!$exists) {
-      menu_save($menu);
-    }
-  }
+	)
+	->fetchField();
+	// Save the record if the data does not exist.
+	if (!$exists) {
+		menu_save($menu);
+	}
 
   $item = ''; 
   $exists = '';
-  foreach ($links as $layer1) {
-    foreach ($layer1 as $link) {
-      // Build an array of menu link.
-      $item = array(
-        'link_path'  => $link['link_path'],
-        'link_title' => $link['link_title'],
-        'menu_navigate'  => $link['menu_navigate'],
-        'weight'     => $link['weight'],
-        'expanded'   => $link['expanded'],
-      );
-      // Look the table first if the data does exist.
-      $exists = db_query("SELECT mlid from {menu_links} WHERE link_title=:link_title AND link_path=:link_path AND menu_navigate=:menu_navigate", 
-                  array(
-                    ':link_title' => $item['link_title'], 
-                    ':link_path'  => $item['link_path'], 
-                    ':menu_navigate'  => $item['menu_navigate'],
-                  )
-                )
-                ->fetchField();
-      // Save the record if the data does not exist.
-      if (!$exists) {  
-        menu_link_save($item);
-      echo "success";
-      }
-    }
+
+  foreach ($links as $link) {
+		// Build an array of menu link.
+		$item = array(
+			'link_path'  => $link['link_path'],
+			'link_title' => $link['link_title'],
+			'menu_name'  => $link['menu_name'],
+			'weight'     => $link['weight'],
+			'expanded'   => $link['expanded'],
+		);
+		// Look the table first if the data does exist.
+		$exists = db_query("SELECT mlid from {menu_links} WHERE link_title=:link_title AND link_path=:link_path AND menu_name=:menu_name", array(
+				':link_title' => $item['link_title'], 
+				':link_path'  => $item['link_path'], 
+				':menu_name'  => $item['menu_name'],
+			)
+		)
+		->fetchField();
+		// Save the record if the data does not exist.
+		if (!$exists) {  
+			menu_link_save($item);
+		}    
   }
 
   return $ret;
