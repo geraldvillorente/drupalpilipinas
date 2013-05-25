@@ -219,7 +219,6 @@ function drupinas_core_update_7005() {
 			'link_title' => 'Images',
 			'link_path'  => '<front>',
 			'menu_name'  => 'menu-navigate',
-      'parent' => 
 			'weight'     => 3,
 			'expanded'   => 0,
 		),
