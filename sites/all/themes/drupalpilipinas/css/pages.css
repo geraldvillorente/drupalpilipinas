@@ -271,24 +271,55 @@ span.field-label { /* The inline field label used by the Fences module */
 }
 
 .event img {
-
-
+  border-radius: 100%;
+  width: 230px;
+  height: 230px;
+  float: left;
+  margin: 10px 70px 0 0;
+  position: relative;
+bottom: 40px;
 }
 
-.event .field-content a {
+.event .date-display-single, .event .views-field-field-address {
+  font-size: 14px;
+  text-transform: Capitalize;
+}
+
+.event .views-field-title {
+  font-size: 30px;
+  line-height: 30px;;
+  width: 800px;
+  padding-left: 250px;
+  height:100px;
+}
+
+
+.event .view-id-events {
+margin: 30px 0;
+}
+
+.event .view-header a{
+  color: #ffffff;
+  float: right;
+  display:inline;
+  padding: -20px 0;
+}
+
+.event a{
   color: #FFF;
   text-decoration: none;
 }
 
-.event .field-content a:hover {
-  text-decoration: underline;
+.event a:hover  {
+  color: #f2f2f2;
 }
 
 
 .region-event .block-views .block-title {
-  padding: 15px 0 35px 0;
+  padding: 10px 0;
   font-size: 13px;
   text-align: center;
+  text-transform: uppercase;
 }
 .region-event .contextual-links-region .block-title a{
   color: #FFF;
