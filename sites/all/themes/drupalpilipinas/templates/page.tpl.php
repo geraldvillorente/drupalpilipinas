@@ -134,7 +134,6 @@
      <?php if (render($page['event'])): ?>
 	 <div class="line-stripe"></div>
 	 <div class="event-wrapper">
-	 <div class="circle-image"></div>
 	 <div class="event">
 	 <?php print render($page['event']); ?>
      </div>

@@ -261,10 +261,18 @@ span.field-label { /* The inline field label used by the Fences module */
   background: url(../images/event-bg.jpg);
   background-size: cover;
   height: 320px;
+  width: 100%;
 }
 
 .event {
   color: #ffffff;
+  margin: 0 auto;
+  width: 960px;
+}
+
+.event img {
+
+
 }
 
 .event .field-content a {
@@ -276,9 +284,11 @@ span.field-label { /* The inline field label used by the Fences module */
   text-decoration: underline;
 }
 
+
 .region-event .block-views .block-title {
   padding: 15px 0 35px 0;
   font-size: 13px;
+  text-align: center;
 }
 .region-event .contextual-links-region .block-title a{
   color: #FFF;

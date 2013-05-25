@@ -146,17 +146,27 @@ td.menu-disabled {
 /*
  * User Login Form
  */
-#edit-name.form-text, #edit-pass.form-text, #edit-mail.form-text {
+.form-text {
   background: #e6e6e6;
   border: 1px solid #e8e8e8;
   padding: 5px;
   width: 300px;
 }
 
-#user-login input[type="submit"], #user-register-form input[type="submit"], #user-pass input[type="submit"] {
+input[type="submit"] {
   background: #014693;
   border: none;
   padding: 10px 20px;
   color: #FFFFFF;
   text-transform: uppercase;
+}
+
+.description {
+  padding-left:10px;
+  font-style: italic;
+}
+
+.fieldset-legend {
+  font-weight: bold;
+  line-spacing: 4px;
 }
