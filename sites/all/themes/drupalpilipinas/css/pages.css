@@ -399,6 +399,8 @@ span.field-label { /* The inline field label used by the Fences module */
 }
 
 #footer {
+ position: relative;
+ bottom: 250px;
 }
 
 /*
