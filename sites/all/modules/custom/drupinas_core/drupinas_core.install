@@ -280,8 +280,6 @@ function drupinas_core_update_7005() {
 		),
 	);
 
-  print_r($menus);
-
 	// Look the table first if the data does exist.
 	$exists = db_query("SELECT title FROM {menu_custom} WHERE menu_name=:menu_name", 
 		array(
