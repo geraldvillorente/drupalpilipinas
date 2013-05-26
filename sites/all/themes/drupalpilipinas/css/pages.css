@@ -366,7 +366,61 @@ margin: 30px 0;
 }
 
 /*
- * Job
+ * Recent Question & Answer
+ */
+.recent-qna {
+  float: left;
+  width: 50%;
+  padding: 70px 10px;
+}
+
+.recent-qna .block-title {
+  font-size: 16px;
+  color: #ACACAC;
+  
+}
+
+.recent-qna .region-recent-qna {
+  padding: 10px 15px 2px;
+  color: #4d4d4d; 
+}
+
+.recent-qna .views-field-nothing {
+  margin-right: 20px;
+  float: left;
+}
+.recent-qna .views-field-title {
+  margin-top: 10px;
+}
+
+
+.recent-qna .views-field-title a {
+  font-size: 16px;
+  color: #4d4d4d;
+  width: 350px;
+}
+
+.recent-qna .views-field-body {
+  margin-top: -20px;
+  font-size: 12px;
+  width: 350px;
+}
+
+.recent-qna .views-field-field-qna-tags {
+  width: 350px;
+  margin: 20px 0 20px 30px;
+}
+
+.recent-qna .views-field-field-qna-tags a {
+  color: #5FB7E7;
+  font-size: 12px;
+  text-transform: capitalize; 
+  width: 350px;\
+  margin: 10px 0 10px 30px;
+}
+
+/*
+ * Job 
  */
 .jobs {
   float: right;
