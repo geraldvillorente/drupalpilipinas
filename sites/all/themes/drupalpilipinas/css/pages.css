@@ -440,13 +440,18 @@ margin: 30px 0;
   width: 960px;
   margin: 0 auto;
   color: #ffffff;
+  font-size: 16px;
 }
 
-.footer .contextual-links-region {
- font-size: 12px;
-}
-footer .menu ul {
+footer .menu {
  float : left;
+ padding: 5px;
+}
+
+footer .menu .leaf, 
+footer .menu .leaf .active{
+ list-style: none;
+ color: #fff;
 }
 
 .region-footer a{

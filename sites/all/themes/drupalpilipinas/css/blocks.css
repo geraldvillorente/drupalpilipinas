@@ -197,4 +197,9 @@ h2.block-title { /* Block title */
 #footer .block {
  display: inline-block;
  vertical-align: top;
+ margin-left : 20px;
+}
+
+#footer .block .menu .leaf:nth-child(9) {
+  color: #000;
 }

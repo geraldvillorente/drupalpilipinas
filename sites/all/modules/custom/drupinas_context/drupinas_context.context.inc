@@ -48,6 +48,18 @@ function drupinas_context_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'menu-navigate',
           'region' => 'footer',
+          'weight' => '-23',
+        ),
+        'menu-menu-connect' => array(
+          'module' => 'menu',
+          'delta' => 'menu-connect',
+          'region' => 'footer',
+          'weight' => '-23',
+        ),
+        'drupinas_core-aboutfooter' => array(
+          'module' => 'drupinas_core',
+          'delta' => 'aboutfooter',
+          'region' => 'footer',
           'weight' => '-10',
         ),
       ),

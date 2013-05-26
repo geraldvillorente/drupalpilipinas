@@ -47,6 +47,9 @@
  */
 
 .node-page { /* Page content node */
+ display: inline-block;
+ vertical-align: top;
+ width: 450px;
 }
 
 .node-article { /* Article content node */
