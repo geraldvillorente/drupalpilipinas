@@ -144,7 +144,6 @@ h2.block-title { /* Block title */
   padding-right: 10px;
   vertical-align: top;
   width: 300px;
-
 }
 
 #block-views-featured-on-blog-block a {
@@ -158,8 +157,8 @@ h2.block-title { /* Block title */
 }
 
 .date-display-single {
- text-transform: uppercase;
- font-size:14px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 #block-views-featured-on-blog-block .views-field-body p {
@@ -171,9 +170,8 @@ h2.block-title { /* Block title */
   float: right;
   top: 40px;
   position: relative;
-  font-size:12px;
+  font-size: 12px;
 }
-
 
 #block-drupinas-core-login a {
   color: #4d4d4d;
@@ -196,22 +194,22 @@ h2.block-title { /* Block title */
 
 /** Footer Block **/
 #footer .block {
- display: inline-block;
- vertical-align: top;
- margin-left : 20px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
 }
 
 #block-menu-menu-connect li {
- background: url("../images/facebook-icon.png") no-repeat center left;
- padding-left: 35px;
+  background: url("../images/facebook-icon.png") no-repeat center left;
+  padding-left: 35px;
 }
 
 #block-menu-menu-connect li + li {
- background: url("../images/twitter-icon.png") no-repeat center left;
- padding-left: 35px;
+  background: url("../images/twitter-icon.png") no-repeat center left;
+  padding-left: 35px;
 }
 
 #block-menu-menu-connect li + li + li{
- background: url("../images/youtube-icon.png") no-repeat center left;
- padding-left: 35px;
+  background: url("../images/youtube-icon.png") no-repeat center left;
+  padding-left: 35px;
 }

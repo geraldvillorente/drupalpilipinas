@@ -70,7 +70,7 @@
  */
 ?>
 
-<!-- <div id="page"> -->
+<div id="page"> 
 
   <header id="header" role="banner">
     <div class="brand">
@@ -104,6 +104,7 @@
     <div class="clearfix"></div>
     <?php print render($page['header']); ?>
   </header>
+
   <div class="line-stripe"></div>
   <div class="nav">
     <?php print render($page['nav']); ?>
@@ -116,63 +117,66 @@
   <?php endif; ?>
 
   <div id="main">
-
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
+
       <?php print $breadcrumb; ?>
+
       <a id="main-content"></a>
+
       <?php print $messages; ?>
       <?php print render($tabs); ?>
       <?php print render($page['help']); ?>
+
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
+
       <?php print render($page['content']); ?>
+
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
 
-     <?php if (render($page['event'])): ?>
-	 <div class="line-stripe"></div>
-	 <div class="event-wrapper">
-	 <div class="event">
-	 <?php print render($page['event']); ?>
-     </div>
-	 </div>
-	<?php endif; ?>
+    <?php if (render($page['event'])): ?>
+			<div class="line-stripe"></div>
+			<div class="event-wrapper">
+				<div class="event">
+					<?php print render($page['event']); ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		
-	<div class="content-wrapper">
-    
-	<?php if(render($page['forum'])): ?>
-		<div class="forum">
-			<?php print render($page['forum']); ?>
-		</div>
-	<?php endif; ?>
+		<div class="content-wrapper">
+			<?php if(render($page['forum'])): ?>
+				<div class="forum">
+					<?php print render($page['forum']); ?>
+				</div>
+			<?php endif; ?>
 
-  <?php if(render($page['recent_qna'])): ?>
-		<div class="recent-qna">
-			 <?php print render($page['recent_qna']); ?>
-		</div>
-	<?php endif; ?>
-		
-	<?php if(render($page['jobs'])): ?>
-		<div class="jobs">
-			 <?php print render($page['jobs']); ?>
-		</div>
-	<?php endif; ?>
-    
-    </div>
+			<?php if(render($page['recent_qna'])): ?>
+				<div class="recent-qna">
+					<?php print render($page['recent_qna']); ?>
+				</div>
+			<?php endif; ?>
+			
+			<?php if(render($page['jobs'])): ?>
+				<div class="jobs">
+					<?php print render($page['jobs']); ?>
+				</div>
+			<?php endif; ?>
+    </div><!-- /.content-wrapper -->
 
-   <?php if(render($page['resources'])): ?>
-      <div class="resources">
-         <?php print render($page['resources']); ?>
-     </div>
-   <?php endif;?>  
+		<?php if(render($page['resources'])): ?>
+			<div class="resources">
+				<?php print render($page['resources']); ?>
+			</div>
+		<?php endif;?>  
 
-   <?php if(render($page['sponsors'])): ?>
-       <div class="sponsors">
-         <?php print render ($page['sponsors']); ?>
-       </div>
-   <?php endif;?>
+		<?php if(render($page['sponsors'])): ?>
+			<div class="sponsors">
+				<?php print render ($page['sponsors']); ?>
+			</div>
+		<?php endif;?>
      
     <?php
       // Render the sidebars to see if there's anything in them.
@@ -186,17 +190,16 @@
         <?php print $sidebar_second; ?>
       </aside><!-- /.sidebars -->
     <?php endif; ?>
-
   </div><!-- /#main -->
+</div><!-- /#page -->
 
-<!-- </div><!-- /#page -->
-  <div class="line-stripe"></div>
-  <div class="footer-wrapper">
-    <div class="footer">
-      <?php print render($page['footer']); ?>
-      <?php print render($page['bottom']); ?>
-    </div>
-  </div>
+<div class="line-stripe"></div>
+<div class="footer-wrapper">
+	<div class="footer">
+		<?php print render($page['footer']); ?>
+		<?php print render($page['bottom']); ?>
+	</div>
+</div>
 
 
 
