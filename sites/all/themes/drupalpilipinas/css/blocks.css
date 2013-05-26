@@ -22,6 +22,7 @@
 }
 
 h2.block-title { /* Block title */
+  font-size: 16px;
 }
 
 #block-aggregator-category-1 { /* Block for the latest news items in the first category */
@@ -200,6 +201,17 @@ h2.block-title { /* Block title */
  margin-left : 20px;
 }
 
-#footer .block .menu .leaf:nth-child(9) {
-  color: #000;
+#block-menu-menu-connect li {
+ background: url("../images/facebook-icon.png") no-repeat center left;
+ padding-left: 35px;
+}
+
+#block-menu-menu-connect li + li {
+ background: url("../images/twitter-icon.png") no-repeat center left;
+ padding-left: 35px;
+}
+
+#block-menu-menu-connect li + li + li{
+ background: url("../images/youtube-icon.png") no-repeat center left;
+ padding-left: 35px;
 }
