@@ -385,10 +385,30 @@ margin: 30px 0;
   color: #4d4d4d; 
 }
 
+.recent-qna .views-row {
+  clear: both;
+}
+
 .recent-qna .views-field-nothing {
   margin-right: 20px;
   float: left;
+  text-align: center;
 }
+
+.recent-qna .vote-count {
+  padding: 10px 0;
+}
+
+.recent-qna .vote-count .vote, .recent-qna .vote-count .answer-count {
+  color: #4d4d4d;
+  font-size:19px;
+  font-weight: bold;
+}
+
+.recent-qna .vote-count .value-label, .recent-qna .vote-count .answer-label  {
+  font-size: 12px; 
+}
+
 .recent-qna .views-field-title {
   margin-top: 10px;
 }
@@ -404,7 +424,7 @@ margin: 30px 0;
   margin-top: -20px;
   font-size: 12px;
   width: 350px;
-  padding-left: 30px;
+  padding-left: 70px;
 }
 
 .recent-qna .views-field-field-qna-tags {
