@@ -67,7 +67,9 @@ function recent_questions_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="vote-count">
   <div class="vote">[value]</div>
+  <span class="value-label">votes</span>
   <div class="answer-count">[field_answer_count]</div>
+  <span class="answer-label">answers</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
