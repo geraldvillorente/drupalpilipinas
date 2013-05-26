@@ -166,31 +166,31 @@ li a.active {
   height: 60px;
 }
 
-#block-menu-menu-hero-menu ul li.leaf {
+#block-menu-menu-hero-menu ul li + li {
   background-color: #014693;
   padding: 20px 0;
 }
 
-#block-menu-menu-hero-menu ul li.leaf:hover {
+#block-menu-menu-hero-menu ul li + li:hover {
   background-color: #436EAB;
   
 }
 
-#block-menu-menu-hero-menu ul li.first.leaf {
+#block-menu-menu-hero-menu ul li {
   background-color: #dc1221;
   padding: 20px 0;
 }
 
-#block-menu-menu-hero-menu ul li.first.leaf:hover {
+#block-menu-menu-hero-menu ul li:hover {
   background-color: #D8625C;
 }
 
-#block-menu-menu-hero-menu ul li.last.leaf {
+#block-menu-menu-hero-menu ul li + li + li {
   background-color: #fecf1b;
   padding: 20px 0;
 }
 
-#block-menu-menu-hero-menu ul li.last.leaf:hover {
+#block-menu-menu-hero-menu ul li + li +li:hover {
   background-color: #ECEB5E;
 }
 
