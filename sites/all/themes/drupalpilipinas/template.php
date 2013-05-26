@@ -146,6 +146,10 @@ function drupalpilipinas_preprocess_html(&$variables, $hook) {
  */
 function drupalpilipinas_preprocess_page(&$variables, $hook) {
   drupal_add_js(drupal_get_path('theme', 'drupalpilipinas') . '/js/init.js');
+
+  if (drupal_is_front_page()) {
+    hide($variables['page']['content']['system_main']['default_message']);
+  }
 }
 
 

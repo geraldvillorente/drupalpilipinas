@@ -387,6 +387,7 @@ margin: 30px 0;
 
 .recent-qna .views-row {
   clear: both;
+  min-height: 91px;
 }
 
 .recent-qna .views-field-nothing {
@@ -408,7 +409,6 @@ margin: 30px 0;
 .recent-qna .views-field-title {
   margin-top: 10px;
 }
-
 
 .recent-qna .views-field-title a {
   font-size: 16px;
