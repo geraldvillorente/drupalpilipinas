@@ -395,10 +395,6 @@ margin: 30px 0;
   text-align: center;
 }
 
-.recent-qna .vote-count {
-  padding: 10px 0;
-}
-
 .recent-qna .vote-count .vote, .recent-qna .vote-count .answer-count {
   color: #4d4d4d;
   font-size:19px;
