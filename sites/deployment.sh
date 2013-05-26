@@ -100,6 +100,10 @@ else
     drush en openlayers -y
     drush en openlayers_ui -y
     
+    # Voting API
+    drush en votingapi -y
+    drush en rate -y
+    
     # Theme.
     drush en drupalpilipinas -y
     drush vset theme_default drupalpilipinas 1
@@ -117,6 +121,9 @@ else
     drush en question_and_answer -y
     drush en drupinasblog -y
     drush en drupinas_profile -y
+    
+    # QnA
+    drush en recent_questions -y
 
     # Run update.php
     # Reset Features.
