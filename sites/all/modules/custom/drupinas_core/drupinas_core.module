@@ -87,7 +87,7 @@ function _load_about_us() {
   // Look the table first if the data does exist.
   $status = 1;
 	$nid = db_query("SELECT nid from {node} WHERE title=:title AND type=:type AND status=:status", array(
-			':title' => "DRUPALPILIPINASS", 
+			':title' => "DRUPALPILIPINAS", 
 			':type'  => 'page', 
 			':status'  => $status,
 		)
