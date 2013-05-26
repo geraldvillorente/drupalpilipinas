@@ -23,7 +23,7 @@ function drupinas_core_uninstall() {
 /**
  * UPDATE: Add menu entries.
  */
-function drupinas_core_update_7007() {
+function drupinas_core_update_7001() {
   $ret = array();
 
   global $base_url;
@@ -182,7 +182,7 @@ function drupinas_core_update_7007() {
 /**
  * UPDATE: Add menu entries(Footer).
  */
-function drupinas_core_update_7005() {
+function drupinas_core_update_7002() {
   $ret = array();
 
   global $base_url;
