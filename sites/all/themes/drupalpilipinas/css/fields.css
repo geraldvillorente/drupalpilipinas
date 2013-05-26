@@ -90,7 +90,7 @@
  * Named fields
  */
 
-.field-name-body {
+.field-name-blody {
 }
 
 .field-name-field-image {
@@ -100,4 +100,36 @@
 }
 
 .field-name-field-FIELDNAME { /* Underscores in field name are replaced with dashes. */
+}
+
+/*
+ * Events Page
+ */
+ 
+.field-name-field-event-subhead {
+  color: #4d4d4d;
+  font-size: 2em;
+  line-height: 1.1em;
+  letter-spacing: 1px;
+  text-transform: Capitalize;
+  font-weight: bold;
+}
+
+.field-name-field-event-date {
+  border-bottom: 2px #4d4d4d solid;
+  padding: 5px 0;
+}
+
+.field-name-field-event-date .date-display-single {
+  font-size: 1em;
+  text-transform: capitalize;
+  color: #D24D33;
+  padding-right: 3px;
+  font-weight: bold; 
+}
+
+
+
+.field-name-field-event-main-image img {
+  margin:0 auto;
 }
