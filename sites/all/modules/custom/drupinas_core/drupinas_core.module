@@ -83,10 +83,24 @@ function _user_login() {
  * About Footer helper function.
  */
 function _load_about_us() {
-  $about_node = node_load(22);
-	$about_view = node_view($about_node, 'teaser');
-  //print_r($about_view);
-	$about = drupal_render($about_view);
 
-  return $about;
+  // Look the table first if the data does exist.
+  $status = 1;
+	$nid = db_query("SELECT nid from {node} WHERE title=:title AND type=:type AND status=:status", array(
+			':title' => "DRUPALPILIPINAS", 
+			':type'  => 'page', 
+			':status'  => $status,
+		)
+	)
+	->fetchField();
+
+  if (isset($nid)) {
+    $about_node = node_load($nid);
+		$about_view = node_view($about_node, 'teaser');
+		//print_r($about_view);
+		$about = drupal_render($about_view);
+
+		return $about;
+  }
+  return;
 } 
