@@ -112,6 +112,12 @@ function drupinas_context_context_default_contexts() {
           'region' => 'event',
           'weight' => '-10',
         ),
+        'views-recent_questions-block' => array(
+          'module' => 'views',
+          'delta' => 'recent_questions-block',
+          'region' => 'recent_qna',
+          'weight' => '-10',
+        ),
         'views-jobs-block' => array(
           'module' => 'views',
           'delta' => 'jobs-block',

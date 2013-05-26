@@ -147,6 +147,12 @@
 			<?php print render($page['forum']); ?>
 		</div>
 	<?php endif; ?>
+
+  <?php if(render($page['recent_qna'])): ?>
+		<div class="recent-qna">
+			 <?php print render($page['recent_qna']); ?>
+		</div>
+	<?php endif; ?>
 		
 	<?php if(render($page['jobs'])): ?>
 		<div class="jobs">

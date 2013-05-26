@@ -106,6 +106,7 @@ regions[help]           = Help
 regions[content]        = Content
 regions[forum]          = Question and Answer
 regions[event]          = Event
+regions[recent_qna]     = Recent QnA
 regions[jobs]           = Jobs
 regions[resources]      = Resources
 regions[sponsors]       = Sponsors
