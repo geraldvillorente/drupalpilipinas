@@ -542,7 +542,7 @@ footer .menu .leaf .active{
  display: inline;
 }
 
-#block-menu-menu-navigate .leaf{
+#block-menu-menu-navigate .leaf {
  width:50%;
 }
 
@@ -556,6 +556,12 @@ footer .menu .leaf .active{
 
 #block-drupinas-core-aboutfooter {
  padding-left: 25px;
+ font-size: 12px;
+}
+
+#block-drupinas-core-aboutfooter header {
+ font-family: Arial;
+ font-size: 16px;
 }
 
 #footer {
