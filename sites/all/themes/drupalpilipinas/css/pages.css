@@ -523,10 +523,39 @@ footer .menu .leaf,
 footer .menu .leaf .active{
  list-style: none;
  color: #fff;
+ margin-top: 10px;
 }
 
 .region-footer a{
  color: #fff;
+}
+
+#block-menu-menu-navigate .menu {
+  width:250px;
+  margin-bottom:20px;
+  overflow:hidden;
+}
+
+#block-menu-menu-navigate .menu .leaf {
+ line-height: 1.5em;
+ float: left;
+ display: inline;
+}
+
+#block-menu-menu-navigate .leaf{
+ width:50%;
+}
+
+#block-menu-menu-connect {
+
+}
+
+#block-menu-menu-connect .leaf a {
+ font-size: 12px;
+}
+
+#block-drupinas-core-aboutfooter {
+ padding-left: 25px;
 }
 
 #footer {
@@ -570,8 +599,8 @@ footer .menu .leaf .active{
 
 .entity-profile2 div .field-name-field-profile-name {
   font-size: 2em;
-	border-bottom: 2px solid #000;
-	width: 100%;
+  border-bottom: 2px solid #000;
+  width: 100%;
   clear: both;
 }
 

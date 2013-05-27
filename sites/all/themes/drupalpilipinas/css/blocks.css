@@ -185,8 +185,8 @@ h2.block-title { /* Block title */
 
 #edit-search-block-form--2 {
   outline: none;
-	border: 0 none;
-	background: #e6e6e6;
+  border: 0 none;
+  background: #e6e6e6;
   padding: 6px;
   width: 100%;
   color: #4d4d4d;
@@ -196,7 +196,8 @@ h2.block-title { /* Block title */
 #footer .block {
   display: inline-block;
   vertical-align: top;
-  margin-left: 20px;
+  margin-left: 30px;
+  margin-top: 70px;
 }
 
 #block-menu-menu-connect li {
