@@ -200,6 +200,13 @@ h2.block-title { /* Block title */
   margin-top: 70px;
 }
 
+#block-menu-menu-navigate li:nth-child(6) a, 
+#block-menu-menu-navigate li:nth-child(7) a,
+#block-menu-menu-navigate li:nth-child(8) a, 
+#block-menu-menu-navigate li:nth-child(9) a { 
+ font-size: 12px;
+}
+
 #block-menu-menu-connect li {
   background: url("../images/facebook-icon.png") no-repeat center left;
   padding-left: 35px;
@@ -210,7 +217,7 @@ h2.block-title { /* Block title */
   padding-left: 35px;
 }
 
-#block-menu-menu-connect li + li + li{
+#block-menu-menu-connect li + li + li {
   background: url("../images/youtube-icon.png") no-repeat center left;
   padding-left: 35px;
 }
