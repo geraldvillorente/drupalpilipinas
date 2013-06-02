@@ -1,0 +1,7 @@
+name = Footer Menu
+description = Other menu located in footer.
+core = 7.x
+package = DrupalPilipinas
+version = 7.x-1.0
+project = footer_menu
+features[features_api][] = api:1
