@@ -126,10 +126,11 @@ h2.block-title { /* Block title */
 #block-user-online { /* "Who's online" block for a list of the online users */
 }
 
-#block-views-featured-on-blog-block {
+#block-views-featured-on-blog-block { /*overflow fixed for mozilla firefox bug*/
   width: 960px;
   margin: 0 auto;
   color: #4d4d4d;
+  overflow: hidden;
 }
 
 #block-views-featured-on-blog-block .block-title {
