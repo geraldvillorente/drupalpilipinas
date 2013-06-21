@@ -35,6 +35,13 @@ function featured_blog_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['columns'] = '3';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Preview Image */
   $handler->display->display_options['fields']['field_blog_preview_image']['id'] = 'field_blog_preview_image';
   $handler->display->display_options['fields']['field_blog_preview_image']['table'] = 'field_data_field_blog_preview_image';
@@ -76,8 +83,23 @@ function featured_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'READ MORE »';
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[path] ';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '500',
+  );
+  /* Field: Content: Node field */
+  $handler->display->display_options['fields']['nodefield']['id'] = 'nodefield';
+  $handler->display->display_options['fields']['nodefield']['table'] = 'node';
+  $handler->display->display_options['fields']['nodefield']['field'] = 'nodefield';
+  $handler->display->display_options['fields']['nodefield']['label'] = '';
+  $handler->display->display_options['fields']['nodefield']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nodefield']['alter']['text'] = 'READ MORE »';
+  $handler->display->display_options['fields']['nodefield']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nodefield']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['nodefield']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nodefield']['links'] = 1;
+  $handler->display->display_options['fields']['nodefield']['comments'] = 0;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

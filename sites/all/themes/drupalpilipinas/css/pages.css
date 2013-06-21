@@ -111,57 +111,6 @@ body {
   width: 100%;
 }
 
-.view-hero div div.views-row.views-row-1 > div {
-  display: block;
-}
-
-.view-hero div div.views-row.views-row-1 > div + div {
-  text-align: right;
-}
-
-.view-hero div div.views-row.views-row-1 > div + div span {
-  width: 300px;
-  display: block;
-  float: right;
-  background-color: #dc1221;
-  padding: 20px 0;
-}
-
-.view-hero div div.views-row.views-row-2 > div + div {
-  text-align: center;
-  width: 300px;
-}
-
-.view-hero div div.views-row.views-row-2 > div + div span {
-  width: 300px;
-  display: block;
-  margin: 0 auto;
-  background-color: #014693;
-  padding: 20px 0;
-}
-
-.view-hero div div.views-row.views-row-3 > div + div {
-  text-align: left;
-}
-
-.view-hero div div.views-row.views-row-3 > div + div span {
-  width: 300px;
-  display: block;
-  background-color: #fecf1b;
-  padding: 20px 0;
-}
-
-.view-hero div div.views-row > div + div, 
-.view-hero div div.views-row.views-row-1 > div + div {
-  display: inline;
-  float: left;
-  position: relative;
-  bottom: 70px;
-}
-
-.view-hero div div.views-row > div {
-  display: none;
-}
 
 /*
  * Main (container for everything else)
@@ -660,5 +609,7 @@ footer .menu .leaf .active{
 /*
  * Jobs Page
  */
+
  
- #content  {
+/* Hero */
+

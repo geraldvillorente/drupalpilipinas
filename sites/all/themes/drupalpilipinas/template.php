@@ -239,3 +239,11 @@ function drupalpilipinas_form_alter(&$form, &$form_state, $form_id) {
     //$form['basic']['keys']['#attributes']['onsubmit'] = "$('#edit-keys--2').val()";
   }
 }
+
+
+function drupalpilipinas_preprocess_views_view(&$variable) {
+  #print_r($variable);
+  if ($variable['view']->name == 'hero') {
+	drupal_add_js(drupal_get_path('theme', 'drupalpilipinas') . '/js/hero.js');  
+  }	
+}
